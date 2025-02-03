@@ -5,7 +5,7 @@
       "name": "Transformers",
       "date": "2017-06-01",
       "link": "https://arxiv.org/abs/1706.03762",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=TR",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Architecture"
@@ -16,7 +16,7 @@
       "name": "GPT 1.0",
       "date": "2018-06-01",
       "link": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G1",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "parameters": "117M"
@@ -27,7 +27,7 @@
       "name": "BERT",
       "date": "2018-10-01",
       "link": "https://arxiv.org/abs/1810.04805",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=BE",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Bidirectional"
@@ -38,7 +38,7 @@
       "name": "GPT 2.0",
       "date": "2019-02-01",
       "link": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G2",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "parameters": "1.5B"
@@ -49,7 +49,7 @@
       "name": "Megatron-LM",
       "date": "2019-09-01",
       "link": "https://arxiv.org/abs/1909.08053",
-      "image": "https://via.placeholder.com/100/76b900/FFFFFF?text=ML",
+      "image": "nvidia.png",
       "properties": {
         "organization": "NVIDIA",
         "type": "Training Framework"
@@ -60,7 +60,7 @@
       "name": "T5",
       "date": "2019-10-01",
       "link": "https://arxiv.org/abs/1910.10683",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=T5",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Text-to-Text"
@@ -71,7 +71,7 @@
       "name": "ZeRO",
       "date": "2019-10-01",
       "link": "https://arxiv.org/abs/1910.02054",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=ZR",
+      "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
         "type": "Memory Optimization"
@@ -82,7 +82,7 @@
       "name": "Scaling Law",
       "date": "2020-01-01",
       "link": "https://arxiv.org/abs/2001.08361",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=SL",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "type": "Training Principle"
@@ -93,7 +93,7 @@
       "name": "GPT 3.0",
       "date": "2020-05-01",
       "link": "https://arxiv.org/abs/2005.14165",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G3",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "parameters": "175B"
@@ -104,7 +104,7 @@
       "name": "Switch Transformers",
       "date": "2021-01-01",
       "link": "https://arxiv.org/abs/2101.03961",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=ST",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "MoE Architecture"
@@ -115,7 +115,7 @@
       "name": "Codex",
       "date": "2021-08-01",
       "link": "https://arxiv.org/abs/2107.03374",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=CD",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "type": "Code Generation"
@@ -126,7 +126,7 @@
       "name": "Foundation Models",
       "date": "2021-08-01",
       "link": "https://arxiv.org/abs/2108.07258",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=FM",
+      "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
         "type": "Conceptual Framework"
@@ -137,7 +137,7 @@
       "name": "FLAN",
       "date": "2021-09-01",
       "link": "https://arxiv.org/abs/2109.01652",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FL",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Instruction Tuning"
@@ -148,7 +148,7 @@
       "name": "T0",
       "date": "2021-10-01",
       "link": "https://arxiv.org/abs/2110.08207",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=T0",
+      "image": "huggingface.svg",
       "properties": {
         "organization": "HuggingFace et al.",
         "type": "Multitask Training"
@@ -159,7 +159,7 @@
       "name": "GLaM",
       "date": "2021-12-01",
       "link": "https://arxiv.org/abs/2112.06905",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=GL",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "MoE Architecture"
@@ -170,7 +170,7 @@
       "name": "WebGPT",
       "date": "2021-12-01",
       "link": "https://arxiv.org/abs/2112.09332",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=WG",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "type": "Web-assisted QA"
@@ -181,7 +181,7 @@
       "name": "Retro",
       "date": "2021-12-01",
       "link": "https://arxiv.org/abs/2112.04426",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=RT",
+      "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
         "type": "Retrieval-Augmented"
@@ -192,7 +192,7 @@
       "name": "Gopher",
       "date": "2021-12-01",
       "link": "https://arxiv.org/abs/2112.11446",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=GP",
+      "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
         "parameters": "280B"
@@ -203,7 +203,7 @@
       "name": "COT",
       "date": "2022-01-01",
       "link": "https://arxiv.org/abs/2201.11903",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=CT",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Reasoning Technique"
@@ -214,7 +214,7 @@
       "name": "LaMDA",
       "date": "2022-01-01",
       "link": "https://arxiv.org/abs/2201.08239",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=LM",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Dialog System"
@@ -225,7 +225,7 @@
       "name": "Minerva",
       "date": "2022-01-01",
       "link": "https://arxiv.org/abs/2206.14858",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=MV",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Math Reasoning"
@@ -236,7 +236,7 @@
       "name": "Megatron-Turing NLG",
       "date": "2022-01-01",
       "link": "https://arxiv.org/abs/2201.11990",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=MT",
+      "image": "nvidia.png",
       "properties": {
         "organization": "Microsoft&NVIDIA",
         "parameters": "530B"
@@ -247,7 +247,7 @@
       "name": "InstructGPT",
       "date": "2022-03-01",
       "link": "https://arxiv.org/abs/2203.02155",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=IG",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "type": "Human Feedback"
@@ -258,7 +258,7 @@
       "name": "PaLM",
       "date": "2022-04-01",
       "link": "https://arxiv.org/abs/2204.02311",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=PL",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "parameters": "540B"
@@ -269,7 +269,7 @@
       "name": "Chinchilla",
       "date": "2022-04-01",
       "link": "https://arxiv.org/abs/2203.15556",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=CH",
+      "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
         "type": "Scaling Laws"
@@ -280,7 +280,7 @@
       "name": "OPT",
       "date": "2022-05-01",
       "link": "https://arxiv.org/abs/2205.01068",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=OP",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Open Model"
@@ -291,7 +291,7 @@
       "name": "UL2",
       "date": "2022-05-01",
       "link": "https://arxiv.org/abs/2205.05131",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=U2",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Unified Framework"
@@ -302,7 +302,7 @@
       "name": "Emergent Abilities",
       "date": "2022-06-01",
       "link": "https://arxiv.org/abs/2206.07682",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=EA",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Research Paper"
@@ -313,7 +313,7 @@
       "name": "BIG-bench",
       "date": "2022-06-01",
       "link": "https://arxiv.org/abs/2206.04615",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=BB",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Benchmark"
@@ -324,7 +324,7 @@
       "name": "METALM",
       "date": "2022-06-01",
       "link": "https://arxiv.org/abs/2206.06336",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=MM",
+      "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
         "type": "General Interface"
@@ -335,7 +335,7 @@
       "name": "Sparrow",
       "date": "2022-09-01",
       "link": "https://arxiv.org/abs/2209.14375",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=SP",
+      "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
         "type": "Alignment"
@@ -346,7 +346,7 @@
       "name": "Flan-T5/PaLM",
       "date": "2022-10-01",
       "link": "https://arxiv.org/abs/2210.11416",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FT",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Instruction Tuning"
@@ -357,7 +357,7 @@
       "name": "GLM-130B",
       "date": "2022-10-01",
       "link": "https://arxiv.org/abs/2210.02414",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=G1",
+      "image": "tsinghua.jpg",
       "properties": {
         "organization": "Tsinghua",
         "parameters": "130B"
@@ -368,7 +368,7 @@
       "name": "HELM",
       "date": "2022-11-01",
       "link": "https://arxiv.org/abs/2211.09110",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=HM",
+      "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
         "type": "Evaluation Framework"
@@ -379,7 +379,7 @@
       "name": "BLOOM",
       "date": "2022-11-01",
       "link": "https://arxiv.org/abs/2211.05100",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=BL",
+      "image": "bigscience.png",
       "properties": {
         "organization": "BigScience",
         "parameters": "176B"
@@ -390,7 +390,7 @@
       "name": "Galactica",
       "date": "2022-11-01",
       "link": "https://arxiv.org/abs/2211.09085",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=GA",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Scientific LLM"
@@ -401,7 +401,7 @@
       "name": "OPT-IML",
       "date": "2022-12-01",
       "link": "https://arxiv.org/abs/2212.12017",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=OI",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Instruction Meta-Learning"
@@ -412,7 +412,7 @@
       "name": "Flan 2022 Collection",
       "date": "2023-01-01",
       "link": "https://arxiv.org/abs/2301.13688",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FC",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Dataset"
@@ -423,7 +423,7 @@
       "name": "LLaMA",
       "date": "2023-02-01",
       "link": "https://arxiv.org/abs/2302.13971",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=LM",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Efficient Model"
@@ -434,7 +434,7 @@
       "name": "Kosmos-1",
       "date": "2023-02-01",
       "link": "https://arxiv.org/abs/2302.14045",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=K1",
+      "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
         "type": "Multimodal"
@@ -445,7 +445,7 @@
       "name": "LRU",
       "date": "2023-03-01",
       "link": "https://arxiv.org/abs/2303.06349",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=LR",
+      "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
         "type": "Recurrent Architecture"
@@ -456,7 +456,7 @@
       "name": "PaLM-E",
       "date": "2023-03-01",
       "link": "https://arxiv.org/abs/2303.03378",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=PE",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Embodied AI"
@@ -467,7 +467,7 @@
       "name": "GPT 4",
       "date": "2023-03-01",
       "link": "https://arxiv.org/abs/2303.08774",
-      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G4",
+      "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
         "type": "Multimodal"
@@ -478,7 +478,7 @@
       "name": "LLaVA",
       "date": "2023-04-01",
       "link": "https://arxiv.org/abs/2304.08485",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=LV",
+      "image": "microsoft.png",
       "properties": {
         "organization": "UW–Madison&Microsoft",
         "type": "Visual Instruction"
@@ -489,7 +489,7 @@
       "name": "Pythia",
       "date": "2023-04-01",
       "link": "https://arxiv.org/abs/2304.01373",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=PY",
+      "image": "eleutherai.webp",
       "properties": {
         "organization": "EleutherAI et al.",
         "type": "Analysis Suite"
@@ -500,7 +500,7 @@
       "name": "Dromedary",
       "date": "2023-05-01",
       "link": "https://arxiv.org/abs/2305.03047",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=DR",
+      "image": "cmu.jpg",
       "properties": {
         "organization": "CMU et al.",
         "type": "Self-Alignment"
@@ -511,7 +511,7 @@
       "name": "PaLM 2",
       "date": "2023-05-01",
       "link": "https://arxiv.org/abs/2305.10403",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=P2",
+      "image": "google.png",
       "properties": {
         "organization": "Google",
         "type": "Multilingual"
@@ -522,7 +522,7 @@
       "name": "RWKV",
       "date": "2023-05-01",
       "link": "https://arxiv.org/abs/2305.13048",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=RW",
+      "image": "eleutherai.webp",
       "properties": {
         "organization": "Bo Peng",
         "type": "RNN-Transformer Hybrid"
@@ -533,7 +533,7 @@
       "name": "DPO",
       "date": "2023-05-01",
       "link": "https://arxiv.org/abs/2305.18290",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=DP",
+      "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
         "type": "Alignment Technique"
@@ -544,7 +544,7 @@
       "name": "ToT",
       "date": "2023-05-01",
       "link": "https://arxiv.org/abs/2305.10601",
-      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=TT",
+      "image": "google.png",
       "properties": {
         "organization": "Google&Princeton",
         "type": "Reasoning Framework"
@@ -555,7 +555,7 @@
       "name": "LLaMA2",
       "date": "2023-07-01",
       "link": "https://arxiv.org/abs/2307.09288",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=L2",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Chat Optimized"
@@ -566,7 +566,7 @@
       "name": "Mistral 7B",
       "date": "2023-10-01",
       "link": "https://arxiv.org/abs/2310.06825",
-      "image": "https://via.placeholder.com/100/34A853/FFFFFF?text=M7",
+      "image": "mistral.png",
       "properties": {
         "organization": "Mistral",
         "parameters": "7B"
@@ -577,7 +577,7 @@
       "name": "Mamba",
       "date": "2023-12-01",
       "link": "https://arxiv.org/abs/2312.00752",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=MB",
+      "image": "cmu.jpg",
       "properties": {
         "organization": "CMU&Princeton",
         "type": "State Space Model"
@@ -588,7 +588,7 @@
       "name": "DeepSeek-v2",
       "date": "2024-01-01",
       "link": "https://arxiv.org/abs/2401.14196",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=DS",
+      "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
         "type": "MoE Model"
@@ -599,7 +599,7 @@
       "name": "OLMo",
       "date": "2024-02-01",
       "link": "https://arxiv.org/abs/2402.00838",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=OL",
+      "image": "ai2.jpg",
       "properties": {
         "organization": "Ai2",
         "type": "Open Framework"
@@ -610,7 +610,7 @@
       "name": "Mamba2",
       "date": "2024-05-01",
       "link": "https://arxiv.org/abs/2405.21072",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=M2",
+      "image": "cmu.jpg",
       "properties": {
         "organization": "CMU&Princeton",
         "type": "SSM Optimization"
@@ -621,7 +621,7 @@
       "name": "Llama3",
       "date": "2024-05-01",
       "link": "https://arxiv.org/abs/2405.12345",
-      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=L3",
+      "image": "meta.png",
       "properties": {
         "organization": "Meta",
         "type": "Efficient Scaling"
@@ -632,7 +632,7 @@
       "name": "FineWeb",
       "date": "2024-06-01",
       "link": "https://arxiv.org/abs/2406.02967",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=FW",
+      "image": "huggingface.svg",
       "properties": {
         "organization": "HuggingFace",
         "type": "Dataset"
@@ -643,7 +643,7 @@
       "name": "OLMoE",
       "date": "2024-09-01",
       "link": "https://arxiv.org/abs/2409.01567",
-      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=OE",
+      "image": "ai2.jpg",
       "properties": {
         "organization": "Ai2",
         "type": "Open MoE"
@@ -654,7 +654,7 @@
       "name": "Qwen2.5",
       "date": "2024-12-01",
       "link": "https://arxiv.org/abs/2412.01234",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=Q2",
+      "image": "alibaba.webp",
       "properties": {
         "organization": "Alibaba",
         "type": "Commercial Model"
@@ -665,7 +665,7 @@
       "name": "DeepSeek-V3",
       "date": "2024-12-01",
       "link": "https://arxiv.org/abs/2412.05678",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=D3",
+      "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
         "type": "Scaled MoE"
@@ -676,7 +676,7 @@
       "name": "DeepSeek-R1",
       "date": "2025-01-01",
       "link": "https://arxiv.org/abs/2501.01001",
-      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=DR",
+      "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
         "type": "Reasoning Focus"
@@ -687,75 +687,61 @@
   "links": [
     { "source": "transformers-2017", "target": "gpt1-2018" },
     { "source": "transformers-2017", "target": "bert-2018" },
-    { "source": "transformers-2017", "target": "megatron-lm-2019" },
+    { "source": "transformers-2017", "target": "t5-2019" },
     { "source": "gpt1-2018", "target": "gpt2-2019" },
     { "source": "gpt2-2019", "target": "gpt3-2020" },
+    { "source": "scaling-law-2020", "target": "gpt3-2020" },
+    { "source": "megatron-lm-2019", "target": "gpt3-2020" },
     { "source": "gpt3-2020", "target": "codex-2021" },
     { "source": "gpt3-2020", "target": "instructgpt-2022" },
-    { "source": "gpt3-2020", "target": "gpt4-2023" },
     { "source": "gpt3-2020", "target": "webgpt-2021" },
-    { "source": "bert-2018", "target": "t5-2019" },
-    { "source": "t5-2019", "target": "switch-transformers-2021" },
-    { "source": "t5-2019", "target": "flan-t5-2022" },
-    { "source": "zero-2019", "target": "megatron-turing-2022" },
-    { "source": "scaling-law-2020", "target": "chinchilla-2022" },
-    { "source": "scaling-law-2020", "target": "palm-2022" },
-    { "source": "scaling-law-2020", "target": "gpt4-2023" },
-    { "source": "palm-2022", "target": "palm-e-2023" },
-    { "source": "palm-2022", "target": "palm2-2023" },
-    { "source": "palm-2022", "target": "ul2-2022" },
-    { "source": "foundation-models-2021", "target": "helm-2022" },
-    { "source": "foundation-models-2021", "target": "bloom-2022" },
-    { "source": "flan-2021", "target": "flan-2023" },
-    { "source": "flan-2021", "target": "flan-t5-2022" },
-    { "source": "flan-2021", "target": "dromedary-2023" },
-    { "source": "webgpt-2021", "target": "sparrow-2022" },
-    { "source": "webgpt-2021", "target": "instructgpt-2022" },
-    { "source": "gopher-2021", "target": "chinchilla-2022" },
-    { "source": "gopher-2021", "target": "lamda-2022" },
-    { "source": "cot-2022", "target": "tot-2023" },
-    { "source": "cot-2022", "target": "minerva-2022" },
-    { "source": "lamda-2022", "target": "palm-e-2023" },
-    { "source": "lamda-2022", "target": "llava-2023" },
-    { "source": "megatron-turing-2022", "target": "opt-2022" },
-    { "source": "megatron-turing-2022", "target": "llama-2023" },
-    { "source": "instructgpt-2022", "target": "dpo-2023" },
-    { "source": "instructgpt-2022", "target": "sparrow-2022" },
+    { "source": "gpt3-2020", "target": "cot-2022" },
+    { "source": "t5-2019", "target": "flan-2021" },
+    { "source": "flan-2021", "target": "t0-2021" },
+    { "source": "transformers-2017", "target": "switch-transformers-2021" },
+    { "source": "t5-2019", "target": "ul2-2022" },
+    { "source": "palm-2022", "target": "chinchilla-2022" },
+    { "source": "gpt3-2020", "target": "bloom-2022" },
+    { "source": "gpt3-2020", "target": "galactica-2022" },
     { "source": "opt-2022", "target": "opt-iml-2022" },
-    { "source": "opt-2022", "target": "galactica-2022" },
-    { "source": "opt-iml-2022", "target": "llama-2023" },
-    { "source": "opt-iml-2022", "target": "mistral-7b-2023" },
+    { "source": "flan-2021", "target": "flan-t5-2022" },
+    { "source": "palm-2022", "target": "palm2-2023" },
     { "source": "llama-2023", "target": "llama2-2023" },
     { "source": "llama2-2023", "target": "llama3-2024" },
-    { "source": "llama2-2023", "target": "llava-2023" },
-    { "source": "kosmos-1-2023", "target": "llava-2023" },
-    { "source": "kosmos-1-2023", "target": "palm-e-2023" },
     { "source": "mamba-2023", "target": "mamba2-2024" },
-    { "source": "mamba-2023", "target": "deepseek-v2-2024" },
-    { "source": "dpo-2023", "target": "mistral-7b-2023" },
-    { "source": "dpo-2023", "target": "llama2-2023" },
-    { "source": "palm2-2023", "target": "olmoe-2024" },
-    { "source": "palm2-2023", "target": "qwen2.5-2024" },
-    { "source": "rwkv-2023", "target": "mamba-2023" },
-    { "source": "rwkv-2023", "target": "deepseek-v2-2024" },
     { "source": "deepseek-v2-2024", "target": "deepseek-v3-2024" },
     { "source": "deepseek-v3-2024", "target": "deepseek-r1-2025" },
-    { "source": "big-bench-2022", "target": "emergent-2022" },
-    { "source": "metalm-2022", "target": "kosmos-1-2023" },
-    { "source": "metalm-2022", "target": "palm-e-2023" },
-    { "source": "glm-130b-2022", "target": "qwen2.5-2024" },
-    { "source": "bloom-2022", "target": "fineweb-2024" },
-    { "source": "galactica-2022", "target": "palm-e-2023" },
-    { "source": "dromedary-2023", "target": "olmoe-2024" },
-    { "source": "ul2-2022", "target": "palm2-2023" },
-    { "source": "retro-2021", "target": "mamba-2023" },
-    { "source": "lru-2023", "target": "mamba2-2024" },
-    { "source": "minerva-2022", "target": "palm-e-2023" },
-    { "source": "pythia-2023", "target": "olmo-2024" },
-    { "source": "pythia-2023", "target": "fineweb-2024" },
-    { "source": "chinchilla-2022", "target": "llama-2023" },
-    { "source": "chinchilla-2022", "target": "mistral-7b-2023" },
-    { "source": "emergent-2022", "target": "tot-2023" },
-    { "source": "emergent-2022", "target": "dromedary-2023" }
+    { "source": "olmo-2024", "target": "olmoe-2024" },
+    { "source": "gpt3-2020", "target": "rwkv-2023" },
+    { "source": "instructgpt-2022", "target": "dromedary-2023" },
+    { "source": "gpt3-2020", "target": "dpo-2023" },
+    { "source": "gpt3-2020", "target": "tot-2023" },
+    { "source": "kosmos-1-2023", "target": "llava-2023" },
+    { "source": "llama2-2023", "target": "mistral-7b-2023" },
+    { "source": "gpt3-2020", "target": "pythia-2023" },
+    { "source": "flan-2021", "target": "flan-2023" },
+
+    { "source": "transformers-2017", "target": "zero-2019" },
+    { "source": "transformers-2017", "target": "foundation-models-2021" },
+    { "source": "transformers-2017", "target": "glam-2021" },
+    { "source": "transformers-2017", "target": "retro-2021" },
+    { "source": "transformers-2017", "target": "gopher-2021" },
+    { "source": "transformers-2017", "target": "lamda-2022" },
+    { "source": "gpt3-2020", "target": "minerva-2022" },
+    { "source": "megatron-lm-2019", "target": "megatron-turing-2022" },
+    { "source": "scaling-law-2020", "target": "emergent-2022" },
+    { "source": "foundation-models-2021", "target": "big-bench-2022" },
+    { "source": "zero-2019", "target": "metalm-2022" },
+    { "source": "instructgpt-2022", "target": "sparrow-2022" },
+    { "source": "transformers-2017", "target": "glm-130b-2022" },
+    { "source": "foundation-models-2021", "target": "helm-2022" },
+    { "source": "transformers-2017", "target": "opt-2022" },
+    { "source": "gpt3-2020", "target": "llama-2023" },
+    { "source": "gpt3-2020", "target": "kosmos-1-2023" },
+    { "source": "transformers-2017", "target": "lru-2023" },
+    { "source": "palm-2022", "target": "palm-e-2023" },
+    { "source": "gpt3-2020", "target": "gpt4-2023" },
+    { "source": "foundation-models-2021", "target": "fineweb-2024" },
+    { "source": "transformers-2017", "target": "qwen2.5-2024" }
   ]
 }
