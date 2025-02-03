@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interactive DAG Viewer</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: "Poppins", sans-serif;
+                background: #1a1a2e;
+                color: #fff;
+            }
+
+            .node {
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+            .node:hover {
+                transform: scale(1.05);
+            }
+
+            .node-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #4ecca3;
+            }
+
+            .node-text {
+                fill: #fff;
+                font-size: 12px;
+                text-anchor: middle;
+            }
+
+            .link {
+                stroke: #4ecca3;
+                stroke-width: 2;
+                opacity: 0.6;
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                border-radius: 10px;
+                color: white;
+                z-index: 1000;
+                min-width: 300px;
+            }
+
+            .modal-content {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .modal-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+
+            .modal-link {
+                color: #4ecca3;
+                text-decoration: none;
+            }
+
+            .property-badge {
+                background: #4ecca355;
+                padding: 4px 8px;
+                border-radius: 15px;
+                margin: 2px;
+                font-size: 12px;
+            }
+            #graph-container {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            /* Add this at the end of your existing styles */
+            .node-image {
+                pointer-events: none;
+            }
+
+            text {
+                user-select: none;
+            }
+
+            .link {
+                stroke: #4ecca3;
+                stroke-opacity: 0.6;
+                marker-end: url(#arrowhead);
+            }
+
+            /* Add arrowhead marker */
+            svg defs {
+                marker#arrowhead {
+                    viewbox: 0 -5 10 10;
+                    refx: 25;
+                    refy: 0;
+                    markerwidth: 6;
+                    markerheight: 6;
+                    orient: auto;
+                }
+                marker#arrowhead path {
+                    fill: #4ecca3;
+                    d: path("M0,-5L10,0L0,5");
+                }
+            }
+            /* Add gradient animation */
+            body {
+                background: linear-gradient(
+                    -45deg,
+                    #1a1a2e,
+                    #16213e,
+                    #0f3460,
+                    #1a1a2e
+                );
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            @keyframes gradientBG {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            /* Update node text styling */
+            .node-text {
+                fill: #fff;
+                font-size: 14px; /* Base font size */
+                text-anchor: middle;
+                pointer-events: none;
+                font-weight: 500;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            #graph-container {
+                width: 100vw;
+                height: 100vh;
+            }
+            .timeline-container {
+                width: 100vw;
+                height: 200vh; /* Allow vertical scrolling */
+                position: relative;
+                background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            }
+
+            .timeline-node {
+                position: absolute;
+                width: 120px;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+
+            .timeline-image {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 3px solid #4ecca3;
+                margin: 0 auto;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+            .timeline-image:hover {
+                transform: scale(1.1);
+            }
+
+            .timeline-connector {
+                position: absolute;
+                border-left: 2px solid #4ecca3;
+                height: 100px;
+                left: 50%;
+            }
+
+            .timeline-date {
+                color: #fff;
+                font-size: 12px;
+                margin-top: 5px;
+            }
+
+            .timeline-name {
+                color: #fff;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="graph-container"></div>
+        <div id="node-modal" class="modal">
+            <div class="modal-content">
+                <img
+                    id="modal-image"
+                    class="modal-image"
+                    src=""
+                    alt="Node Image"
+                />
+                <h2 id="modal-title"></h2>
+                <div id="modal-properties"></div>
+                <a id="modal-link" class="modal-link" target="_blank"
+                    >Visit Link</a
+                >
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

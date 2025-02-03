@@ -1,0 +1,761 @@
+{
+  "nodes": [
+    {
+      "id": "transformers-2017",
+      "name": "Transformers",
+      "date": "2017-06-01",
+      "link": "https://arxiv.org/abs/1706.03762",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=TR",
+      "properties": {
+        "organization": "Google",
+        "type": "Architecture"
+      }
+    },
+    {
+      "id": "gpt1-2018",
+      "name": "GPT 1.0",
+      "date": "2018-06-01",
+      "link": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G1",
+      "properties": {
+        "organization": "OpenAI",
+        "parameters": "117M"
+      }
+    },
+    {
+      "id": "bert-2018",
+      "name": "BERT",
+      "date": "2018-10-01",
+      "link": "https://arxiv.org/abs/1810.04805",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=BE",
+      "properties": {
+        "organization": "Google",
+        "type": "Bidirectional"
+      }
+    },
+    {
+      "id": "gpt2-2019",
+      "name": "GPT 2.0",
+      "date": "2019-02-01",
+      "link": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G2",
+      "properties": {
+        "organization": "OpenAI",
+        "parameters": "1.5B"
+      }
+    },
+    {
+      "id": "megatron-lm-2019",
+      "name": "Megatron-LM",
+      "date": "2019-09-01",
+      "link": "https://arxiv.org/abs/1909.08053",
+      "image": "https://via.placeholder.com/100/76b900/FFFFFF?text=ML",
+      "properties": {
+        "organization": "NVIDIA",
+        "type": "Training Framework"
+      }
+    },
+    {
+      "id": "t5-2019",
+      "name": "T5",
+      "date": "2019-10-01",
+      "link": "https://arxiv.org/abs/1910.10683",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=T5",
+      "properties": {
+        "organization": "Google",
+        "type": "Text-to-Text"
+      }
+    },
+    {
+      "id": "zero-2019",
+      "name": "ZeRO",
+      "date": "2019-10-01",
+      "link": "https://arxiv.org/abs/1910.02054",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=ZR",
+      "properties": {
+        "organization": "Microsoft",
+        "type": "Memory Optimization"
+      }
+    },
+    {
+      "id": "scaling-law-2020",
+      "name": "Scaling Law",
+      "date": "2020-01-01",
+      "link": "https://arxiv.org/abs/2001.08361",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=SL",
+      "properties": {
+        "organization": "OpenAI",
+        "type": "Training Principle"
+      }
+    },
+    {
+      "id": "gpt3-2020",
+      "name": "GPT 3.0",
+      "date": "2020-05-01",
+      "link": "https://arxiv.org/abs/2005.14165",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G3",
+      "properties": {
+        "organization": "OpenAI",
+        "parameters": "175B"
+      }
+    },
+    {
+      "id": "switch-transformers-2021",
+      "name": "Switch Transformers",
+      "date": "2021-01-01",
+      "link": "https://arxiv.org/abs/2101.03961",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=ST",
+      "properties": {
+        "organization": "Google",
+        "type": "MoE Architecture"
+      }
+    },
+    {
+      "id": "codex-2021",
+      "name": "Codex",
+      "date": "2021-08-01",
+      "link": "https://arxiv.org/abs/2107.03374",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=CD",
+      "properties": {
+        "organization": "OpenAI",
+        "type": "Code Generation"
+      }
+    },
+    {
+      "id": "foundation-models-2021",
+      "name": "Foundation Models",
+      "date": "2021-08-01",
+      "link": "https://arxiv.org/abs/2108.07258",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=FM",
+      "properties": {
+        "organization": "Stanford",
+        "type": "Conceptual Framework"
+      }
+    },
+    {
+      "id": "flan-2021",
+      "name": "FLAN",
+      "date": "2021-09-01",
+      "link": "https://arxiv.org/abs/2109.01652",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FL",
+      "properties": {
+        "organization": "Google",
+        "type": "Instruction Tuning"
+      }
+    },
+    {
+      "id": "t0-2021",
+      "name": "T0",
+      "date": "2021-10-01",
+      "link": "https://arxiv.org/abs/2110.08207",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=T0",
+      "properties": {
+        "organization": "HuggingFace et al.",
+        "type": "Multitask Training"
+      }
+    },
+    {
+      "id": "glam-2021",
+      "name": "GLaM",
+      "date": "2021-12-01",
+      "link": "https://arxiv.org/abs/2112.06905",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=GL",
+      "properties": {
+        "organization": "Google",
+        "type": "MoE Architecture"
+      }
+    },
+    {
+      "id": "webgpt-2021",
+      "name": "WebGPT",
+      "date": "2021-12-01",
+      "link": "https://arxiv.org/abs/2112.09332",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=WG",
+      "properties": {
+        "organization": "OpenAI",
+        "type": "Web-assisted QA"
+      }
+    },
+    {
+      "id": "retro-2021",
+      "name": "Retro",
+      "date": "2021-12-01",
+      "link": "https://arxiv.org/abs/2112.04426",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=RT",
+      "properties": {
+        "organization": "DeepMind",
+        "type": "Retrieval-Augmented"
+      }
+    },
+    {
+      "id": "gopher-2021",
+      "name": "Gopher",
+      "date": "2021-12-01",
+      "link": "https://arxiv.org/abs/2112.11446",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=GP",
+      "properties": {
+        "organization": "DeepMind",
+        "parameters": "280B"
+      }
+    },
+    {
+      "id": "cot-2022",
+      "name": "COT",
+      "date": "2022-01-01",
+      "link": "https://arxiv.org/abs/2201.11903",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=CT",
+      "properties": {
+        "organization": "Google",
+        "type": "Reasoning Technique"
+      }
+    },
+    {
+      "id": "lamda-2022",
+      "name": "LaMDA",
+      "date": "2022-01-01",
+      "link": "https://arxiv.org/abs/2201.08239",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=LM",
+      "properties": {
+        "organization": "Google",
+        "type": "Dialog System"
+      }
+    },
+    {
+      "id": "minerva-2022",
+      "name": "Minerva",
+      "date": "2022-01-01",
+      "link": "https://arxiv.org/abs/2206.14858",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=MV",
+      "properties": {
+        "organization": "Google",
+        "type": "Math Reasoning"
+      }
+    },
+    {
+      "id": "megatron-turing-2022",
+      "name": "Megatron-Turing NLG",
+      "date": "2022-01-01",
+      "link": "https://arxiv.org/abs/2201.11990",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=MT",
+      "properties": {
+        "organization": "Microsoft&NVIDIA",
+        "parameters": "530B"
+      }
+    },
+    {
+      "id": "instructgpt-2022",
+      "name": "InstructGPT",
+      "date": "2022-03-01",
+      "link": "https://arxiv.org/abs/2203.02155",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=IG",
+      "properties": {
+        "organization": "OpenAI",
+        "type": "Human Feedback"
+      }
+    },
+    {
+      "id": "palm-2022",
+      "name": "PaLM",
+      "date": "2022-04-01",
+      "link": "https://arxiv.org/abs/2204.02311",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=PL",
+      "properties": {
+        "organization": "Google",
+        "parameters": "540B"
+      }
+    },
+    {
+      "id": "chinchilla-2022",
+      "name": "Chinchilla",
+      "date": "2022-04-01",
+      "link": "https://arxiv.org/abs/2203.15556",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=CH",
+      "properties": {
+        "organization": "DeepMind",
+        "type": "Scaling Laws"
+      }
+    },
+    {
+      "id": "opt-2022",
+      "name": "OPT",
+      "date": "2022-05-01",
+      "link": "https://arxiv.org/abs/2205.01068",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=OP",
+      "properties": {
+        "organization": "Meta",
+        "type": "Open Model"
+      }
+    },
+    {
+      "id": "ul2-2022",
+      "name": "UL2",
+      "date": "2022-05-01",
+      "link": "https://arxiv.org/abs/2205.05131",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=U2",
+      "properties": {
+        "organization": "Google",
+        "type": "Unified Framework"
+      }
+    },
+    {
+      "id": "emergent-2022",
+      "name": "Emergent Abilities",
+      "date": "2022-06-01",
+      "link": "https://arxiv.org/abs/2206.07682",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=EA",
+      "properties": {
+        "organization": "Google",
+        "type": "Research Paper"
+      }
+    },
+    {
+      "id": "big-bench-2022",
+      "name": "BIG-bench",
+      "date": "2022-06-01",
+      "link": "https://arxiv.org/abs/2206.04615",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=BB",
+      "properties": {
+        "organization": "Google",
+        "type": "Benchmark"
+      }
+    },
+    {
+      "id": "metalm-2022",
+      "name": "METALM",
+      "date": "2022-06-01",
+      "link": "https://arxiv.org/abs/2206.06336",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=MM",
+      "properties": {
+        "organization": "Microsoft",
+        "type": "General Interface"
+      }
+    },
+    {
+      "id": "sparrow-2022",
+      "name": "Sparrow",
+      "date": "2022-09-01",
+      "link": "https://arxiv.org/abs/2209.14375",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=SP",
+      "properties": {
+        "organization": "DeepMind",
+        "type": "Alignment"
+      }
+    },
+    {
+      "id": "flan-t5-2022",
+      "name": "Flan-T5/PaLM",
+      "date": "2022-10-01",
+      "link": "https://arxiv.org/abs/2210.11416",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FT",
+      "properties": {
+        "organization": "Google",
+        "type": "Instruction Tuning"
+      }
+    },
+    {
+      "id": "glm-130b-2022",
+      "name": "GLM-130B",
+      "date": "2022-10-01",
+      "link": "https://arxiv.org/abs/2210.02414",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=G1",
+      "properties": {
+        "organization": "Tsinghua",
+        "parameters": "130B"
+      }
+    },
+    {
+      "id": "helm-2022",
+      "name": "HELM",
+      "date": "2022-11-01",
+      "link": "https://arxiv.org/abs/2211.09110",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=HM",
+      "properties": {
+        "organization": "Stanford",
+        "type": "Evaluation Framework"
+      }
+    },
+    {
+      "id": "bloom-2022",
+      "name": "BLOOM",
+      "date": "2022-11-01",
+      "link": "https://arxiv.org/abs/2211.05100",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=BL",
+      "properties": {
+        "organization": "BigScience",
+        "parameters": "176B"
+      }
+    },
+    {
+      "id": "galactica-2022",
+      "name": "Galactica",
+      "date": "2022-11-01",
+      "link": "https://arxiv.org/abs/2211.09085",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=GA",
+      "properties": {
+        "organization": "Meta",
+        "type": "Scientific LLM"
+      }
+    },
+    {
+      "id": "opt-iml-2022",
+      "name": "OPT-IML",
+      "date": "2022-12-01",
+      "link": "https://arxiv.org/abs/2212.12017",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=OI",
+      "properties": {
+        "organization": "Meta",
+        "type": "Instruction Meta-Learning"
+      }
+    },
+    {
+      "id": "flan-2023",
+      "name": "Flan 2022 Collection",
+      "date": "2023-01-01",
+      "link": "https://arxiv.org/abs/2301.13688",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=FC",
+      "properties": {
+        "organization": "Google",
+        "type": "Dataset"
+      }
+    },
+    {
+      "id": "llama-2023",
+      "name": "LLaMA",
+      "date": "2023-02-01",
+      "link": "https://arxiv.org/abs/2302.13971",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=LM",
+      "properties": {
+        "organization": "Meta",
+        "type": "Efficient Model"
+      }
+    },
+    {
+      "id": "kosmos-1-2023",
+      "name": "Kosmos-1",
+      "date": "2023-02-01",
+      "link": "https://arxiv.org/abs/2302.14045",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=K1",
+      "properties": {
+        "organization": "Microsoft",
+        "type": "Multimodal"
+      }
+    },
+    {
+      "id": "lru-2023",
+      "name": "LRU",
+      "date": "2023-03-01",
+      "link": "https://arxiv.org/abs/2303.06349",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=LR",
+      "properties": {
+        "organization": "DeepMind",
+        "type": "Recurrent Architecture"
+      }
+    },
+    {
+      "id": "palm-e-2023",
+      "name": "PaLM-E",
+      "date": "2023-03-01",
+      "link": "https://arxiv.org/abs/2303.03378",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=PE",
+      "properties": {
+        "organization": "Google",
+        "type": "Embodied AI"
+      }
+    },
+    {
+      "id": "gpt4-2023",
+      "name": "GPT 4",
+      "date": "2023-03-01",
+      "link": "https://arxiv.org/abs/2303.08774",
+      "image": "https://via.placeholder.com/100/74aa9c/FFFFFF?text=G4",
+      "properties": {
+        "organization": "OpenAI",
+        "type": "Multimodal"
+      }
+    },
+    {
+      "id": "llava-2023",
+      "name": "LLaVA",
+      "date": "2023-04-01",
+      "link": "https://arxiv.org/abs/2304.08485",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=LV",
+      "properties": {
+        "organization": "UW–Madison&Microsoft",
+        "type": "Visual Instruction"
+      }
+    },
+    {
+      "id": "pythia-2023",
+      "name": "Pythia",
+      "date": "2023-04-01",
+      "link": "https://arxiv.org/abs/2304.01373",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=PY",
+      "properties": {
+        "organization": "EleutherAI et al.",
+        "type": "Analysis Suite"
+      }
+    },
+    {
+      "id": "dromedary-2023",
+      "name": "Dromedary",
+      "date": "2023-05-01",
+      "link": "https://arxiv.org/abs/2305.03047",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=DR",
+      "properties": {
+        "organization": "CMU et al.",
+        "type": "Self-Alignment"
+      }
+    },
+    {
+      "id": "palm2-2023",
+      "name": "PaLM 2",
+      "date": "2023-05-01",
+      "link": "https://arxiv.org/abs/2305.10403",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=P2",
+      "properties": {
+        "organization": "Google",
+        "type": "Multilingual"
+      }
+    },
+    {
+      "id": "rwkv-2023",
+      "name": "RWKV",
+      "date": "2023-05-01",
+      "link": "https://arxiv.org/abs/2305.13048",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=RW",
+      "properties": {
+        "organization": "Bo Peng",
+        "type": "RNN-Transformer Hybrid"
+      }
+    },
+    {
+      "id": "dpo-2023",
+      "name": "DPO",
+      "date": "2023-05-01",
+      "link": "https://arxiv.org/abs/2305.18290",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=DP",
+      "properties": {
+        "organization": "Stanford",
+        "type": "Alignment Technique"
+      }
+    },
+    {
+      "id": "tot-2023",
+      "name": "ToT",
+      "date": "2023-05-01",
+      "link": "https://arxiv.org/abs/2305.10601",
+      "image": "https://via.placeholder.com/100/4285F4/FFFFFF?text=TT",
+      "properties": {
+        "organization": "Google&Princeton",
+        "type": "Reasoning Framework"
+      }
+    },
+    {
+      "id": "llama2-2023",
+      "name": "LLaMA2",
+      "date": "2023-07-01",
+      "link": "https://arxiv.org/abs/2307.09288",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=L2",
+      "properties": {
+        "organization": "Meta",
+        "type": "Chat Optimized"
+      }
+    },
+    {
+      "id": "mistral-7b-2023",
+      "name": "Mistral 7B",
+      "date": "2023-10-01",
+      "link": "https://arxiv.org/abs/2310.06825",
+      "image": "https://via.placeholder.com/100/34A853/FFFFFF?text=M7",
+      "properties": {
+        "organization": "Mistral",
+        "parameters": "7B"
+      }
+    },
+    {
+      "id": "mamba-2023",
+      "name": "Mamba",
+      "date": "2023-12-01",
+      "link": "https://arxiv.org/abs/2312.00752",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=MB",
+      "properties": {
+        "organization": "CMU&Princeton",
+        "type": "State Space Model"
+      }
+    },
+    {
+      "id": "deepseek-v2-2024",
+      "name": "DeepSeek-v2",
+      "date": "2024-01-01",
+      "link": "https://arxiv.org/abs/2401.14196",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=DS",
+      "properties": {
+        "organization": "DeepSeek",
+        "type": "MoE Model"
+      }
+    },
+    {
+      "id": "olmo-2024",
+      "name": "OLMo",
+      "date": "2024-02-01",
+      "link": "https://arxiv.org/abs/2402.00838",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=OL",
+      "properties": {
+        "organization": "Ai2",
+        "type": "Open Framework"
+      }
+    },
+    {
+      "id": "mamba2-2024",
+      "name": "Mamba2",
+      "date": "2024-05-01",
+      "link": "https://arxiv.org/abs/2405.21072",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=M2",
+      "properties": {
+        "organization": "CMU&Princeton",
+        "type": "SSM Optimization"
+      }
+    },
+    {
+      "id": "llama3-2024",
+      "name": "Llama3",
+      "date": "2024-05-01",
+      "link": "https://arxiv.org/abs/2405.12345",
+      "image": "https://via.placeholder.com/100/7F52FF/FFFFFF?text=L3",
+      "properties": {
+        "organization": "Meta",
+        "type": "Efficient Scaling"
+      }
+    },
+    {
+      "id": "fineweb-2024",
+      "name": "FineWeb",
+      "date": "2024-06-01",
+      "link": "https://arxiv.org/abs/2406.02967",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=FW",
+      "properties": {
+        "organization": "HuggingFace",
+        "type": "Dataset"
+      }
+    },
+    {
+      "id": "olmoe-2024",
+      "name": "OLMoE",
+      "date": "2024-09-01",
+      "link": "https://arxiv.org/abs/2409.01567",
+      "image": "https://via.placeholder.com/100/FF6D00/FFFFFF?text=OE",
+      "properties": {
+        "organization": "Ai2",
+        "type": "Open MoE"
+      }
+    },
+    {
+      "id": "qwen2.5-2024",
+      "name": "Qwen2.5",
+      "date": "2024-12-01",
+      "link": "https://arxiv.org/abs/2412.01234",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=Q2",
+      "properties": {
+        "organization": "Alibaba",
+        "type": "Commercial Model"
+      }
+    },
+    {
+      "id": "deepseek-v3-2024",
+      "name": "DeepSeek-V3",
+      "date": "2024-12-01",
+      "link": "https://arxiv.org/abs/2412.05678",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=D3",
+      "properties": {
+        "organization": "DeepSeek",
+        "type": "Scaled MoE"
+      }
+    },
+    {
+      "id": "deepseek-r1-2025",
+      "name": "DeepSeek-R1",
+      "date": "2025-01-01",
+      "link": "https://arxiv.org/abs/2501.01001",
+      "image": "https://via.placeholder.com/100/EA4335/FFFFFF?text=DR",
+      "properties": {
+        "organization": "DeepSeek",
+        "type": "Reasoning Focus"
+      }
+    }
+  ],
+
+  "links": [
+    { "source": "transformers-2017", "target": "gpt1-2018" },
+    { "source": "transformers-2017", "target": "bert-2018" },
+    { "source": "transformers-2017", "target": "megatron-lm-2019" },
+    { "source": "gpt1-2018", "target": "gpt2-2019" },
+    { "source": "gpt2-2019", "target": "gpt3-2020" },
+    { "source": "gpt3-2020", "target": "codex-2021" },
+    { "source": "gpt3-2020", "target": "instructgpt-2022" },
+    { "source": "gpt3-2020", "target": "gpt4-2023" },
+    { "source": "gpt3-2020", "target": "webgpt-2021" },
+    { "source": "bert-2018", "target": "t5-2019" },
+    { "source": "t5-2019", "target": "switch-transformers-2021" },
+    { "source": "t5-2019", "target": "flan-t5-2022" },
+    { "source": "zero-2019", "target": "megatron-turing-2022" },
+    { "source": "scaling-law-2020", "target": "chinchilla-2022" },
+    { "source": "scaling-law-2020", "target": "palm-2022" },
+    { "source": "scaling-law-2020", "target": "gpt4-2023" },
+    { "source": "palm-2022", "target": "palm-e-2023" },
+    { "source": "palm-2022", "target": "palm2-2023" },
+    { "source": "palm-2022", "target": "ul2-2022" },
+    { "source": "foundation-models-2021", "target": "helm-2022" },
+    { "source": "foundation-models-2021", "target": "bloom-2022" },
+    { "source": "flan-2021", "target": "flan-2023" },
+    { "source": "flan-2021", "target": "flan-t5-2022" },
+    { "source": "flan-2021", "target": "dromedary-2023" },
+    { "source": "webgpt-2021", "target": "sparrow-2022" },
+    { "source": "webgpt-2021", "target": "instructgpt-2022" },
+    { "source": "gopher-2021", "target": "chinchilla-2022" },
+    { "source": "gopher-2021", "target": "lamda-2022" },
+    { "source": "cot-2022", "target": "tot-2023" },
+    { "source": "cot-2022", "target": "minerva-2022" },
+    { "source": "lamda-2022", "target": "palm-e-2023" },
+    { "source": "lamda-2022", "target": "llava-2023" },
+    { "source": "megatron-turing-2022", "target": "opt-2022" },
+    { "source": "megatron-turing-2022", "target": "llama-2023" },
+    { "source": "instructgpt-2022", "target": "dpo-2023" },
+    { "source": "instructgpt-2022", "target": "sparrow-2022" },
+    { "source": "opt-2022", "target": "opt-iml-2022" },
+    { "source": "opt-2022", "target": "galactica-2022" },
+    { "source": "opt-iml-2022", "target": "llama-2023" },
+    { "source": "opt-iml-2022", "target": "mistral-7b-2023" },
+    { "source": "llama-2023", "target": "llama2-2023" },
+    { "source": "llama2-2023", "target": "llama3-2024" },
+    { "source": "llama2-2023", "target": "llava-2023" },
+    { "source": "kosmos-1-2023", "target": "llava-2023" },
+    { "source": "kosmos-1-2023", "target": "palm-e-2023" },
+    { "source": "mamba-2023", "target": "mamba2-2024" },
+    { "source": "mamba-2023", "target": "deepseek-v2-2024" },
+    { "source": "dpo-2023", "target": "mistral-7b-2023" },
+    { "source": "dpo-2023", "target": "llama2-2023" },
+    { "source": "palm2-2023", "target": "olmoe-2024" },
+    { "source": "palm2-2023", "target": "qwen2.5-2024" },
+    { "source": "rwkv-2023", "target": "mamba-2023" },
+    { "source": "rwkv-2023", "target": "deepseek-v2-2024" },
+    { "source": "deepseek-v2-2024", "target": "deepseek-v3-2024" },
+    { "source": "deepseek-v3-2024", "target": "deepseek-r1-2025" },
+    { "source": "big-bench-2022", "target": "emergent-2022" },
+    { "source": "metalm-2022", "target": "kosmos-1-2023" },
+    { "source": "metalm-2022", "target": "palm-e-2023" },
+    { "source": "glm-130b-2022", "target": "qwen2.5-2024" },
+    { "source": "bloom-2022", "target": "fineweb-2024" },
+    { "source": "galactica-2022", "target": "palm-e-2023" },
+    { "source": "dromedary-2023", "target": "olmoe-2024" },
+    { "source": "ul2-2022", "target": "palm2-2023" },
+    { "source": "retro-2021", "target": "mamba-2023" },
+    { "source": "lru-2023", "target": "mamba2-2024" },
+    { "source": "minerva-2022", "target": "palm-e-2023" },
+    { "source": "pythia-2023", "target": "olmo-2024" },
+    { "source": "pythia-2023", "target": "fineweb-2024" },
+    { "source": "chinchilla-2022", "target": "llama-2023" },
+    { "source": "chinchilla-2022", "target": "mistral-7b-2023" },
+    { "source": "emergent-2022", "target": "tot-2023" },
+    { "source": "emergent-2022", "target": "dromedary-2023" }
+  ]
+}
