@@ -8,7 +8,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Architecture"
+        "description": "The landmark paper 'Attention Is All You Need' introduced the Transformer architecture, using self-attention to process sequences in parallel. This breakthrough enabled more efficient training and set the stage for the many large-scale models that followed."
       }
     },
     {
@@ -19,7 +19,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "parameters": "117M"
+        "description": "OpenAI’s GPT-1 demonstrated that a transformer-based model pre-trained on a large corpus and then fine-tuned for specific tasks could perform well across diverse language tasks. It laid the groundwork for subsequent generations of generative models."
       }
     },
     {
@@ -30,7 +30,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Bidirectional"
+        "description": "Developed by Google, BERT (Bidirectional Encoder Representations from Transformers) introduced bidirectional training, meaning it looks at context from both left and right. This innovation led to significant improvements in language understanding and many state-of-the-art results on NLP benchmarks."
       }
     },
     {
@@ -41,7 +41,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "parameters": "1.5B"
+        "description": "GPT-2 scaled up the transformer approach to 1.5 billion parameters, showcasing impressive text generation and general language understanding abilities. Its release sparked important discussions around the ethical implications of powerful text-generation models."
       }
     },
     {
@@ -52,7 +52,7 @@
       "image": "nvidia.png",
       "properties": {
         "organization": "NVIDIA",
-        "type": "Training Framework"
+        "description": "Megatron-LM, from NVIDIA, is a framework for efficiently training extremely large transformer models using optimized model and data parallelism techniques. It has been instrumental in exploring the upper limits of model scaling."
       }
     },
     {
@@ -63,7 +63,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Text-to-Text"
+        "description": "Google's T5 (Text-To-Text Transfer Transformer) recast all NLP tasks into a unified text-to-text format. This elegant approach not only simplified the architecture but also achieved state-of-the-art performance across a wide range of tasks."
       }
     },
     {
@@ -74,7 +74,7 @@
       "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
-        "type": "Memory Optimization"
+        "description": "ZeRO (Zero Redundancy Optimizer) is a breakthrough in training large-scale deep learning models, especially those with trillions of parameters. It focuses on optimizing memory usage during training, allowing much larger models to be trained efficiently and at higher speeds, overcoming the limitations of traditional data- and model-parallelism strategies."
       }
     },
     {
@@ -85,7 +85,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "type": "Training Principle"
+        "description": "Research on scaling laws quantitatively demonstrated how model performance improves predictably as a function of parameters, data, and compute. These insights have been crucial for guiding the development of ever-larger language models."
       }
     },
     {
@@ -96,7 +96,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "parameters": "175B"
+        "description": "OpenAI's GPT-3, with 175 billion parameters, showcased remarkable few-shot and even zero-shot learning capabilities. Its ability to perform a wide array of language tasks without task-specific fine-tuning made it a milestone in the field."
       }
     },
     {
@@ -107,7 +107,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "MoE Architecture"
+        "description": "Switch Transformers introduced a mixture-of-experts approach, where only a subset of the model’s parameters are activated for any given input. This design allows models to scale to trillions of parameters while keeping computational costs manageable."
       }
     },
     {
@@ -118,7 +118,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "type": "Code Generation"
+        "description": "Built on the GPT-3 architecture, Codex is fine-tuned specifically for programming tasks. It powers tools like GitHub Copilot by translating natural language into code, demonstrating strong abilities in code synthesis and understanding."
       }
     },
     {
@@ -129,7 +129,7 @@
       "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
-        "type": "Conceptual Framework"
+        "description": "This term broadly describes large pre-trained models that serve as the basis for a wide variety of downstream applications. Their versatility and transferability have made them central to modern AI research and development."
       }
     },
     {
@@ -140,7 +140,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Instruction Tuning"
+        "description": "FLAN (Fine-tuned LAnguage Net) is a family of models that are tuned on a variety of instructions to better follow human prompts. This approach has improved the model's performance on diverse tasks by aligning outputs more closely with user intent."
       }
     },
     {
@@ -151,7 +151,7 @@
       "image": "huggingface.svg",
       "properties": {
         "organization": "HuggingFace et al.",
-        "type": "Multitask Training"
+        "description": "T0 is an instruction-tuned version of T5 that was trained on a diverse set of tasks. Its design emphasizes robust performance in zero-shot and few-shot scenarios, making it effective at generalizing to new instructions."
       }
     },
     {
@@ -162,7 +162,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "MoE Architecture"
+        "description": "MoE Architecture"
       }
     },
     {
@@ -173,7 +173,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "type": "Web-assisted QA"
+        "description": "WebGPT is an experimental model by OpenAI that incorporates web-browsing capabilities to fetch up-to-date information. This integration of retrieval mechanisms helps improve factuality and relevance in its responses."
       }
     },
     {
@@ -184,7 +184,7 @@
       "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
-        "type": "Retrieval-Augmented"
+        "description": "RETRO (Retrieval-Enhanced Transformer) augments the standard transformer architecture with a retrieval component that brings in external information. This design helps the model produce more accurate and contextually grounded outputs."
       }
     },
     {
@@ -195,7 +195,7 @@
       "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
-        "parameters": "280B"
+        "description": "Developed by DeepMind, Gopher is a 280B parameter model evaluated extensively across academic and practical benchmarks. It’s particularly noted for its capabilities in reading comprehension and dialogue, contributing valuable insights into model scaling."
       }
     },
     {
@@ -206,7 +206,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Reasoning Technique"
+        "description": "‘Chain-of-Thought’ (CoT) prompting techniques were introduced around 2022 to improve complex reasoning in language models. By encouraging step-by-step problem solving, CoT helps models break down and solve intricate tasks more effectively."
       }
     },
     {
@@ -217,7 +217,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Dialog System"
+        "description": "LaMDA (Language Model for Dialogue Applications) by Google is tailored for natural and engaging conversational AI. It emphasizes nuanced dialogue generation and safe interaction, aiming to understand and respond to human conversation in a natural manner."
       }
     },
     {
@@ -228,7 +228,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Math Reasoning"
+        "description": "Minerva is a model fine-tuned for mathematical and scientific problem solving. It’s designed to handle complex quantitative reasoning tasks, making it particularly useful for academic and research-oriented applications."
       }
     },
     {
@@ -239,7 +239,7 @@
       "image": "nvidia.png",
       "properties": {
         "organization": "Microsoft&NVIDIA",
-        "parameters": "530B"
+        "description": "Megatron-Turing NLG is the result of a collaboration that scaled transformer architectures to 530B parameters. This model pushes the envelope in natural language understanding and generation, combining advanced training techniques from NVIDIA and Microsoft."
       }
     },
     {
@@ -250,7 +250,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "type": "Human Feedback"
+        "description": "InstructGPT represents OpenAI’s efforts to align language models with user instructions. Using reinforcement learning from human feedback (RLHF), it produces outputs that are more helpful and aligned with human expectations."
       }
     },
     {
@@ -261,7 +261,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "parameters": "540B"
+        "description": "Google's PaLM (Pathways Language Model) is a massive model with around 540 billion parameters. It excels in multi-task learning and few-shot performance, demonstrating robust capabilities across a wide range of language tasks."
       }
     },
     {
@@ -272,7 +272,7 @@
       "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
-        "type": "Scaling Laws"
+        "description": "Chinchilla, from DeepMind, emphasizes efficient scaling by striking a balance between model size and the amount of training data. The research showed that smaller models trained on more data can outperform larger models that are overtrained."
       }
     },
     {
@@ -283,7 +283,7 @@
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Open Model"
+        "description": "Meta’s OPT (Open Pre-trained Transformer) series offers a range of model sizes with an emphasis on transparency. Released with detailed training logs and model cards, OPT provides valuable resources for the research community."
       }
     },
     {
@@ -294,7 +294,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Unified Framework"
+        "description": "UL2 (Unifying Language Learning) is designed to merge multiple pre-training objectives into one framework. This unified approach allows the model to perform robustly across diverse NLP tasks by integrating various learning paradigms."
       }
     },
     {
@@ -305,7 +305,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Research Paper"
+        "description": "This term refers to the phenomenon where large language models begin to exhibit unexpected capabilities as they scale. These emergent abilities—such as improved reasoning or creativity—often only appear when models reach a critical size."
       }
     },
     {
@@ -316,7 +316,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Benchmark"
+        "description": "BIG-bench is a comprehensive benchmark designed to test the limits of language models on a wide variety of tasks. It has become an important tool for evaluating the generalization and reasoning capabilities of large-scale models."
       }
     },
     {
@@ -327,7 +327,7 @@
       "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
-        "type": "General Interface"
+        "description": "MetaLM refers to a series of language models from Meta (formerly Facebook) that explore scaling and efficiency. While specifics can vary, these models contribute to the broader understanding of large-scale model training and performance."
       }
     },
     {
@@ -338,7 +338,7 @@
       "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
-        "type": "Alignment"
+        "description": "Developed by DeepMind, Sparrow is a dialogue agent that focuses on safe and informative interactions. It integrates safety constraints and factual grounding, aiming to produce helpful and accurate conversational responses."
       }
     },
     {
@@ -349,7 +349,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Instruction Tuning"
+        "description": "FLAN-T5 combines the T5 text-to-text framework with instruction tuning from the FLAN family. This hybrid approach improves the model’s ability to follow directions and perform a wide array of tasks effectively."
       }
     },
     {
@@ -360,7 +360,7 @@
       "image": "tsinghua.jpg",
       "properties": {
         "organization": "Tsinghua",
-        "parameters": "130B"
+        "description": "GLM-130B is a model developed with a focus on multilingual capabilities, particularly for Chinese and English. It’s noted for its efficient training techniques and competitive performance in multilingual NLP."
       }
     },
     {
@@ -371,7 +371,7 @@
       "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
-        "type": "Evaluation Framework"
+        "description": "HELM (Holistic Evaluation of Language Models) is not a model per se but an initiative aimed at providing comprehensive evaluations of language models. It assesses models across a variety of dimensions such as fairness, robustness, and real-world performance."
       }
     },
     {
@@ -382,7 +382,7 @@
       "image": "bigscience.png",
       "properties": {
         "organization": "BigScience",
-        "parameters": "176B"
+        "description": "BLOOM is a collaborative, open-access 176B parameter multilingual language model developed by the BigScience initiative. With 176 billion parameters, it supports many languages and tasks, emphasizing transparency and community-driven research."
       }
     },
     {
@@ -393,7 +393,7 @@
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Scientific LLM"
+        "description": "Galactica was designed to specialize in scientific literature and knowledge, aiming to assist in scientific research. However, it encountered challenges regarding factual accuracy and the handling of complex scientific content."
       }
     },
     {
@@ -404,18 +404,18 @@
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Instruction Meta-Learning"
+        "description": "OPT-IML is a variant of Meta’s OPT models that incorporates instruction meta learning to better follow complex instructions. Detailed public information is limited, but it represents efforts to improve model alignment."
       }
     },
     {
       "id": "flan-2023",
-      "name": "Flan 2022 Collection",
+      "name": "Flan 2022",
       "date": "2023-01-01",
       "link": "https://arxiv.org/abs/2301.13688",
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Dataset"
+        "description": "The FLAN series in 2022 continues to refine instruction tuning, enhancing the ability of language models to follow human prompts accurately. These improvements build on previous successes to further boost task performance."
       }
     },
     {
@@ -426,7 +426,7 @@
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Efficient Model"
+        "description": "Meta’s LLaMA (Large Language Model Meta AI) models released in 2023 offer competitive performance on various benchmarks while being made more accessible to the research community, fostering transparency and collaboration."
       }
     },
     {
@@ -437,7 +437,7 @@
       "image": "microsoft.png",
       "properties": {
         "organization": "Microsoft",
-        "type": "Multimodal"
+        "description": "Kosmos-1 is a multi-modal model that integrates both language and vision, enabling it to understand and generate content across text and images. This cross-modal capability represents a significant step toward unified AI systems."
       }
     },
     {
@@ -448,7 +448,7 @@
       "image": "deepmind.webp",
       "properties": {
         "organization": "DeepMind",
-        "type": "Recurrent Architecture"
+        "description": "Recurrent Architecture"
       }
     },
     {
@@ -459,7 +459,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Embodied AI"
+        "description": "PaLM-E is an extension of Google's PaLM model designed for embodied tasks, integrating visual perception and language understanding. This multimodal approach aims to bridge the gap between language processing and physical interaction."
       }
     },
     {
@@ -470,7 +470,7 @@
       "image": "openai.jpg",
       "properties": {
         "organization": "OpenAI",
-        "type": "Multimodal"
+        "description": "OpenAI's GPT-4 is a flagship model known for its improved reasoning, multimodal abilities (handling both text and images), and enhanced alignment and safety features. It represents a significant leap forward in language model capabilities."
       }
     },
     {
@@ -481,7 +481,7 @@
       "image": "microsoft.png",
       "properties": {
         "organization": "UW–Madison&Microsoft",
-        "type": "Visual Instruction"
+        "description": "LLaVA extends the LLaMA model with visual understanding, enabling it to process and generate multimodal content. This integration allows the model to combine visual context with language processing for richer interactions."
       }
     },
     {
@@ -492,7 +492,7 @@
       "image": "eleutherai.webp",
       "properties": {
         "organization": "EleutherAI et al.",
-        "type": "Analysis Suite"
+        "description": "Pythia is a series of models released by EleutherAI that emphasizes transparency and reproducibility in research. By offering various model sizes and detailed training logs, it allows researchers to study the behavior and scaling of large language models."
       }
     },
     {
@@ -503,7 +503,7 @@
       "image": "cmu.jpg",
       "properties": {
         "organization": "CMU et al.",
-        "type": "Self-Alignment"
+        "description": "Self-Alignment"
       }
     },
     {
@@ -514,7 +514,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google",
-        "type": "Multilingual"
+        "description": "PaLM 2 is Google’s improved version of its original PaLM model. It offers better performance, refined reasoning abilities, and enhanced safety features, reflecting ongoing advancements in scaling and model alignment."
       }
     },
     {
@@ -524,8 +524,8 @@
       "link": "https://arxiv.org/abs/2305.13048",
       "image": "eleutherai.webp",
       "properties": {
-        "organization": "Bo Peng",
-        "type": "RNN-Transformer Hybrid"
+        "organization": "EleutherAI et al.",
+        "description": "RWKV offers an alternative to traditional transformers by blending aspects of recurrent neural networks (RNNs) with transformer-level performance. This novel approach to sequence modeling aims to provide efficiency and scalability."
       }
     },
     {
@@ -536,7 +536,7 @@
       "image": "stanford.png",
       "properties": {
         "organization": "Stanford",
-        "type": "Alignment Technique"
+        "description": "DPO (Direct Preference Optimization) is a method designed to align language models more directly with human preferences. By streamlining the reinforcement learning process, it seeks to produce outputs that better reflect user intentions."
       }
     },
     {
@@ -547,7 +547,7 @@
       "image": "google.png",
       "properties": {
         "organization": "Google&Princeton",
-        "type": "Reasoning Framework"
+        "description": "Reasoning Framework"
       }
     },
     {
@@ -558,7 +558,7 @@
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Chat Optimized"
+        "description": "Llama 2 is the next iteration of Meta’s LLaMA models, featuring improved instruction-following, reasoning, and safety. It’s designed for both research and commercial applications, building on the success of its predecessors."
       }
     },
     {
@@ -569,7 +569,7 @@
       "image": "mistral.png",
       "properties": {
         "organization": "Mistral",
-        "parameters": "7B"
+        "description": "Mistral 7B is an open-source model known for its efficiency. Despite having 7 billion parameters—a relatively modest size—it has been optimized for speed and cost-effectiveness while delivering competitive performance."
       }
     },
     {
@@ -580,18 +580,18 @@
       "image": "cmu.jpg",
       "properties": {
         "organization": "CMU&Princeton",
-        "type": "State Space Model"
+        "description": "Mamba is an AI model designed to handle long sequences more efficiently than Transformers, the architecture behind most modern AI models like GPT. While Transformers rely on an attention mechanism that struggles with long sequences due to its quadratic scaling, Mamba introduces Selective State Space Models (SSMs) to achieve linear-time complexity."
       }
     },
     {
       "id": "deepseek-v2-2024",
       "name": "DeepSeek-v2",
       "date": "2024-01-01",
-      "link": "https://arxiv.org/abs/2401.14196",
+      "link": "https://arxiv.org/abs/2405.04434",
       "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
-        "type": "MoE Model"
+        "description": "DeepSeek-V2 is a cutting-edge AI model designed to maximize efficiency in both training and inference while maintaining strong performance. It follows the Mixture-of-Experts (MoE) architecture, meaning that instead of using all of its parameters at once, it selectively activates only a portion of them per token, making it both powerful and cost-effective."
       }
     },
     {
@@ -602,84 +602,95 @@
       "image": "ai2.jpg",
       "properties": {
         "organization": "Ai2",
-        "type": "Open Framework"
+        "description": "OLMo is a truly open-source language model designed to advance the scientific study of AI by providing full transparency into its training data, model architecture, and development process—something that is increasingly rare as major AI models become closed off behind proprietary systems."
       }
     },
     {
       "id": "mamba2-2024",
       "name": "Mamba2",
       "date": "2024-05-01",
-      "link": "https://arxiv.org/abs/2405.21072",
+      "link": "https://arxiv.org/abs/2405.21060",
       "image": "cmu.jpg",
       "properties": {
         "organization": "CMU&Princeton",
-        "type": "SSM Optimization"
+        "description": "This research introduces a theoretical bridge between Transformers and State-Space Models (SSMs)—two of the most important architectures in deep learning. While Transformers have dominated AI breakthroughs, SSMs (like Mamba) have recently shown they can match or even outperform Transformers, especially for efficiency in handling long sequences."
       }
     },
     {
       "id": "llama3-2024",
       "name": "Llama3",
       "date": "2024-05-01",
-      "link": "https://arxiv.org/abs/2405.12345",
+      "link": "https://arxiv.org/abs/2407.21783",
       "image": "meta.png",
       "properties": {
         "organization": "Meta",
-        "type": "Efficient Scaling"
+        "description": "Llama 3 is a new foundation model that represents a significant leap forward in the development of multilingual, multitask AI systems. It is part of a broader trend where AI models are becoming increasingly versatile, capable of handling language, coding, reasoning, and even interacting with various tools and multimodal inputs like images, video, and speech."
       }
     },
     {
       "id": "fineweb-2024",
       "name": "FineWeb",
       "date": "2024-06-01",
-      "link": "https://arxiv.org/abs/2406.02967",
+      "link": "https://arxiv.org/abs/2406.17557",
       "image": "huggingface.svg",
       "properties": {
         "organization": "HuggingFace",
-        "type": "Dataset"
+        "description": "FineWeb is a cutting-edge text dataset designed to improve the performance of large language models (LLMs) by offering high-quality data for pretraining. In this research, the team introduces a 15-trillion token dataset sourced from 96 snapshots of Common Crawl, which is a popular archive of web data. This dataset is shown to create better-performing LLMs than other publicly available datasets used for similar purposes, like those used to train models such as Llama 3 and Mixtral."
       }
     },
     {
       "id": "olmoe-2024",
       "name": "OLMoE",
       "date": "2024-09-01",
-      "link": "https://arxiv.org/abs/2409.01567",
+      "link": "https://arxiv.org/abs/2409.02060",
       "image": "ai2.jpg",
       "properties": {
         "organization": "Ai2",
-        "type": "Open MoE"
+        "description": "OLMoE is a state-of-the-art language model that leverages a sparse Mixture-of-Experts (MoE) architecture to achieve high performance with efficient use of computational resources. The model uses 7 billion parameters, but only activates 1 billion parameters per input token. This efficient use of resources allows the model to achieve strong performance without requiring excessive computational cost."
       }
     },
     {
       "id": "qwen2.5-2024",
       "name": "Qwen2.5",
       "date": "2024-12-01",
-      "link": "https://arxiv.org/abs/2412.01234",
+      "link": "https://arxiv.org/abs/2412.15115",
       "image": "alibaba.webp",
       "properties": {
         "organization": "Alibaba",
-        "type": "Commercial Model"
+        "description": "Qwen2.5 is a series of large language models (LLMs) developed to meet a wide range of use cases, with significant improvements in both pre-training and post-training compared to previous versions. The model series offers a variety of configurations, from open-weight models to proprietary solutions for specific applications, providing flexibility for different user needs."
       }
     },
     {
       "id": "deepseek-v3-2024",
       "name": "DeepSeek-V3",
       "date": "2024-12-01",
-      "link": "https://arxiv.org/abs/2412.05678",
+      "link": "https://arxiv.org/html/2412.19437v1",
       "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
-        "type": "Scaled MoE"
+        "description": "DeepSeek-V3 is a cutting-edge Mixture-of-Experts (MoE) language model that takes AI efficiency and performance to the next level. With 671 billion total parameters, it’s a heavy hitter in terms of scale, but its smart architecture ensures that it remains efficient in both training and inference."
       }
     },
     {
       "id": "deepseek-r1-2025",
       "name": "DeepSeek-R1",
       "date": "2025-01-01",
-      "link": "https://arxiv.org/abs/2501.01001",
+      "link": "https://arxiv.org/abs/2501.12948",
       "image": "deepseek.webp",
       "properties": {
         "organization": "DeepSeek",
-        "type": "Reasoning Focus"
+        "description": "DeepSeek-R1 introduces a new approach to enhancing reasoning capabilities in large language models (LLMs) by leveraging reinforcement learning (RL). The model family consists of two main variants: DeepSeek-R1-Zero and DeepSeek-R1, with both demonstrating advanced reasoning skills, but with distinct approaches to training."
+      }
+    },
+    {
+      "id": "claude-3",
+      "name": "Claude 3",
+      "date": "2024-03-04",
+      "link": "https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+      "image": "anthropic.webp",
+      "properties": {
+        "organization": "Anthropic",
+        "description": "Developed by Anthropic, Claude 3 is a large language model that emphasizes safety and helpfulness. Built with constitutional AI principles and refined through iterative human feedback, it strives to produce reliable, well-aligned responses while handling complex tasks."
       }
     }
   ],
@@ -688,6 +699,13 @@
     { "source": "transformers-2017", "target": "gpt1-2018" },
     { "source": "transformers-2017", "target": "bert-2018" },
     { "source": "transformers-2017", "target": "t5-2019" },
+    { "source": "transformers-2017", "target": "claude-3" },
+    { "source": "transformers-2017", "target": "scaling-law-2020" },
+    { "source": "transformers-2017", "target": "deepseek-v2-2024" },
+    { "source": "foundation-models-2021", "target": "mamba-2023" },
+    { "source": "gpt3-2020", "target": "palm-2022" },
+    { "source": "transformers-2017", "target": "olmo-2024" },
+    { "source": "bert-2018", "target": "megatron-lm-2019" },
     { "source": "gpt1-2018", "target": "gpt2-2019" },
     { "source": "gpt2-2019", "target": "gpt3-2020" },
     { "source": "scaling-law-2020", "target": "gpt3-2020" },
@@ -696,11 +714,12 @@
     { "source": "gpt3-2020", "target": "instructgpt-2022" },
     { "source": "gpt3-2020", "target": "webgpt-2021" },
     { "source": "gpt3-2020", "target": "cot-2022" },
+    { "source": "cot-2022", "target": "deepseek-v3-2024" },
     { "source": "t5-2019", "target": "flan-2021" },
-    { "source": "flan-2021", "target": "t0-2021" },
+    { "source": "t5-2019", "target": "t0-2021" },
     { "source": "transformers-2017", "target": "switch-transformers-2021" },
     { "source": "t5-2019", "target": "ul2-2022" },
-    { "source": "palm-2022", "target": "chinchilla-2022" },
+    { "source": "gpt3-2020", "target": "chinchilla-2022" },
     { "source": "gpt3-2020", "target": "bloom-2022" },
     { "source": "gpt3-2020", "target": "galactica-2022" },
     { "source": "opt-2022", "target": "opt-iml-2022" },
@@ -720,7 +739,7 @@
     { "source": "llama2-2023", "target": "mistral-7b-2023" },
     { "source": "gpt3-2020", "target": "pythia-2023" },
     { "source": "flan-2021", "target": "flan-2023" },
-
+    { "source": "switch-transformers-2021", "target": "deepseek-v2-2024" },
     { "source": "transformers-2017", "target": "zero-2019" },
     { "source": "transformers-2017", "target": "foundation-models-2021" },
     { "source": "transformers-2017", "target": "glam-2021" },

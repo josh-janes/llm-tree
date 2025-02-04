@@ -1,66 +1,112 @@
-// Use full window dimensions
-
+// Use full window dimensions.
 const width = window.innerWidth;
 const height = window.innerHeight * 3; // Stretch vertically
 const margin = { top: 20, right: 20, bottom: 20, left: 60 };
 
 // Define radii for normal and expanded nodes.
 const normalRadius = 10;
-const expandedRadius = 20;
+const expandedRadius = 30;
 const nodeSpacing = 200;
-const textPadding = 40; // Increased text padding
+const textPadding = 40; // extra padding for text
 
 const detailsWidth = 200;
-const detailsHeight = 120;
+let detailsHeight = 120; // initial height (will be recalculated per node)
 
-// Select the SVG and add a container group (this group will be zoomable/pannable)
+// --- Helper function to wrap text ---
+// This function creates <tspan> elements as needed so that the text fits within maxWidth.
+function wrapText(textSelection, maxWidth, lineHeight = 1.2) {
+  textSelection.each(function () {
+    const text = d3.select(this);
+    const words = text.text().split(/\s+/).reverse();
+    let word,
+      line = [],
+      lineNumber = 0;
+    const x = text.attr("x") || 0;
+    const y = text.attr("y") || 0;
+    const dy = parseFloat(text.attr("dy")) || 0;
+    text.text(""); // clear current text
+    // Create the first tspan.
+    let tspan = text
+      .append("tspan")
+      .attr("x", x)
+      .attr("y", y)
+      .attr("dy", dy + "em");
+    while ((word = words.pop())) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > maxWidth) {
+        // If adding the word makes it too long, remove it and start a new tspan.
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        lineNumber++;
+        tspan = text
+          .append("tspan")
+          .attr("x", x)
+          .attr("y", y)
+          .attr("dy", lineNumber * lineHeight + dy + "em")
+          .text(word);
+      }
+    }
+  });
+}
+
+// --- SVG and Zoom Setup ---
+// Create an SVG element and a zoomable container.
 const svg = d3.select("#dag").attr("width", width).attr("height", height);
 
 const zoomContainer = svg.append("g");
 const container = zoomContainer.append("g");
 
-// Set up zoom behavior with proportional scaling
 const zoom = d3
   .zoom()
   .scaleExtent([0.5, 5])
   .on("zoom", (event) => {
-    // Apply zoom transformation to container
     zoomContainer.attr("transform", event.transform);
 
-    container.selectAll(".year-line").attr("width", width);
-
-    // Scale nodes, texts, and links proportionally
     container
-      .selectAll(".node circle")
-      .attr("r", (d) => (d.expanded ? expandedRadius : normalRadius) / scale);
+      .selectAll("g.node > circle.outline")
+      .attr("r", (d) => (d.expanded ? expandedRadius : normalRadius) / scale) // Scale radius properly
+      .attr("stroke-width", 1);
 
-    container.selectAll(".details text").attr("font-size", `${12 / scale}px`);
-
-    container.selectAll(".node text").attr("font-size", `${12 / scale}px`);
-
-    container.selectAll(".link").attr("stroke-width", 2 / scale);
-
-    // Scale details if expanded
+    // Maintain icon size
     container
-      .selectAll(".details rect")
-      .attr("width", detailsWidth / scale)
-      .attr("height", detailsHeight / scale)
-      .attr("x", -100 / scale);
+      .selectAll("g.node > image")
+      .attr(
+        "x",
+        (d) => -((d.expanded ? expandedRadius * 1.5 : normalRadius) / scale),
+      )
+      .attr(
+        "y",
+        (d) => -((d.expanded ? expandedRadius * 1.5 : normalRadius) / scale),
+      )
+      .attr(
+        "width",
+        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : normalRadius)) / scale,
+      )
+      .attr(
+        "height",
+        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : normalRadius)) / scale,
+      );
 
     container
-      .selectAll(".details text")
-      .attr("font-size", `${12 / scale}px`)
-      .attr("y", function () {
-        const originalY = parseFloat(d3.select(this).attr("data-original-y"));
-        return originalY / scale;
-      });
+      .selectAll("g.node > circle")
+      .attr(
+        "r",
+        (d) => (d.expanded ? expandedRadius : normalRadius) / event.transform.k,
+      );
+
+    container
+      .selectAll("g.node > text")
+      .attr("font-size", `${12 / event.transform.k}px`);
+
+    container.selectAll(".link").attr("stroke-width", 2 / event.transform.k);
   });
-svg.call(zoom);
 
-// Prevent double-click zoom
+svg.call(zoom);
 svg.on("dblclick.zoom", null);
 
-// Load the graph data.
+// --- Load and Render Graph Data ---
 fetch("/api/graph")
   .then((response) => response.json())
   .then((data) => {
@@ -71,14 +117,12 @@ fetch("/api/graph")
   });
 
 function renderGraph(graph) {
-  // Preprocess nodes to calculate text widths
+  // Preprocess nodes: convert date strings, set flags, and measure text.
   const tempSvg = d3.select("body").append("svg").style("visibility", "hidden");
   graph.nodes.forEach((d) => {
     d.dateObj = new Date(d.date);
     d.expanded = false;
     d.childOffset = 0;
-
-    // Calculate text width to prevent overlap
     const textElement = tempSvg
       .append("text")
       .text(d.name)
@@ -88,9 +132,10 @@ function renderGraph(graph) {
   });
   tempSvg.remove();
 
+  // Set up a time scale for vertical positioning.
   const dateExtent = d3.extent(graph.nodes, (d) => d.dateObj);
-  dateExtent[1] = new Date(dateExtent[1].getFullYear() + 2, 0, 1); // Ensure next year tick
-
+  dateExtent[0] = new Date(dateExtent[0].getFullYear(), 0, 1);
+  dateExtent[1] = new Date(dateExtent[1].getFullYear() + 2, 0, 1);
   const yScale = d3
     .scaleTime()
     .domain(dateExtent)
@@ -98,6 +143,7 @@ function renderGraph(graph) {
 
   const yearTicks = d3.timeYears(dateExtent[0], dateExtent[1]);
 
+  // Draw grid lines and year labels.
   const gridGroup = container.insert("g", ":first-child").attr("class", "grid");
   gridGroup
     .selectAll("line.year-line")
@@ -109,7 +155,6 @@ function renderGraph(graph) {
     .attr("x2", 99999)
     .attr("y1", (d) => yScale(d))
     .attr("y2", (d) => yScale(d));
-
   gridGroup
     .selectAll("text.year-label")
     .data(yearTicks)
@@ -121,42 +166,45 @@ function renderGraph(graph) {
     .attr("dy", "0.35em")
     .text((d) => d.getFullYear());
 
-  // Custom x-scale to prevent text overlap with massive spacing
+  // Set up an x-scale for initial positions.
   const xScale = d3
     .scalePoint()
     .domain(graph.nodes.map((d) => d.id))
     .range([margin.left, width - margin.right])
     .padding(50);
+  graph.nodes.forEach((d) => {
+    d.initialX = xScale(d.id);
+    if (d.x === undefined) d.x = d.initialX;
+  });
 
+  // Create a force simulation.
   const simulation = d3
     .forceSimulation(graph.nodes)
+    .force("x", d3.forceX((d) => d.initialX).strength(0.5))
+    .force("y", d3.forceY((d) => yScale(d.dateObj)).strength(1))
     .force(
       "link",
       d3
         .forceLink(graph.links)
         .id((d) => d.id)
-        .distance(nodeSpacing),
+        .distance(nodeSpacing)
+        .strength(0.5),
     )
     .force("charge", d3.forceManyBody().strength(-1))
-    .force("y", d3.forceY((d) => yScale(d.dateObj)).strength(1))
     .force(
       "collision",
-      d3
-        .forceCollide()
-        .radius((d) =>
-          Math.max(
-            d.expanded ? expandedRadius * 3 : normalRadius * 2,
-            d.textWidth,
-          ),
-        ),
+      d3.forceCollide((d) => {
+        const baseRadius = d.expanded ? expandedRadius : normalRadius;
+        return Math.max(baseRadius * 1.5, d.textWidth);
+      }),
     )
+    .velocityDecay(0.7)
     .on("tick", ticked);
 
-  // Preprocess links to assign child offsets
+  // Preprocess links for child offsets.
   graph.links.forEach((link) => {
     const targetNode = graph.nodes.find((node) => node.id === link.target);
     const sourceNode = graph.nodes.find((node) => node.id === link.source);
-
     if (sourceNode) {
       sourceNode.childOffset = (sourceNode.childOffset || 0) + 1;
       targetNode.parent = sourceNode.id;
@@ -164,6 +212,7 @@ function renderGraph(graph) {
     }
   });
 
+  // Draw links.
   const linkGroup = container.append("g").attr("class", "links");
   const linkElements = linkGroup
     .selectAll("line")
@@ -174,6 +223,7 @@ function renderGraph(graph) {
     .attr("stroke-width", 2)
     .attr("stroke", "rgba(0,0,0,0.2)");
 
+  // Draw nodes.
   const nodeGroup = container.append("g").attr("class", "nodes");
   const nodeElements = nodeGroup
     .selectAll("g.node")
@@ -182,23 +232,32 @@ function renderGraph(graph) {
     .append("g")
     .attr("class", "node")
     .on("click", function (event, d) {
+      // Toggle expanded state.
       d.expanded = !d.expanded;
-      simulation.alpha(1).restart();
+      if (d.expanded) {
+        d.fx = d.x;
+        d.fy = d.y;
+      } else {
+        d.fx = null;
+        d.fy = null;
+      }
+      simulation.alphaTarget(0.05).restart();
+      d3.select(this).raise();
       updateNodeDetails(d3.select(this), d, d.expanded);
     });
 
-  // Replace the circle creation code with this:
+  // Node circles.
   nodeElements
     .append("circle")
     .attr("r", (d) => (d.expanded ? expandedRadius : normalRadius))
-    .attr("fill", "white") // Remove solid fill
+    .attr("fill", "white")
     .attr("stroke", "white")
     .attr("stroke-width", 4);
 
-  // Add image elements inside the nodes
+  // Node images.
   nodeElements
     .append("image")
-    .attr("xlink:href", (d) => "icons/" + d.image) // Use node's image property
+    .attr("xlink:href", (d) => "icons/" + d.image)
     .attr("x", (d) => -(d.expanded ? expandedRadius : normalRadius))
     .attr("y", (d) => -(d.expanded ? expandedRadius : normalRadius))
     .attr("width", (d) => 2 * (d.expanded ? expandedRadius : normalRadius))
@@ -208,71 +267,152 @@ function renderGraph(graph) {
       (d) => `circle(${d.expanded ? expandedRadius : normalRadius}px)`,
     );
 
+  // Node labels (direct children of g.node).
   nodeElements
     .append("text")
-    .attr("dy", (d) => (d.expanded ? 50 : 20))
+    .attr("dy", (d) => (d.expanded ? 50 : 30))
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
+    .attr("fill", "white")
+    .attr(
+      "text-shadow",
+      "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+    )
+    .attr("font-family", "sans-serif")
     .text((d) => d.name);
 
+  // --- Details Box (Expanded Node Info) ---
   function updateNodeDetails(nodeSelection, d, showDetails) {
+    // Remove any existing details.
     nodeSelection.selectAll(".details").remove();
+
+    // Update circle outline
+    nodeSelection
+      .select("circle.outline")
+      .attr("r", showDetails ? expandedRadius + 5 : normalRadius + 3)
+      .attr("stroke-width", 2 / d3.zoomTransform(container.node()).k);
+
+    // Update the node circle and label positions.
     nodeSelection
       .select("circle")
-      .attr("r", showDetails ? expandedRadius : normalRadius);
+      .attr("r", showDetails ? expandedRadius : normalRadius)
+      .attr("clip-path", showDetails ? expandedRadius : normalRadius);
     nodeSelection.select("text").attr("dy", showDetails ? 50 : 20);
 
+    nodeSelection
+      .select("image")
+      .attr("x", showDetails ? -expandedRadius : -normalRadius)
+      .attr("y", showDetails ? -expandedRadius : -normalRadius)
+      .attr("width", showDetails ? 2 * expandedRadius : 2 * normalRadius)
+      .attr("height", showDetails ? 2 * expandedRadius : 2 * normalRadius)
+      .attr(
+        "clip-path",
+        `circle(${showDetails ? expandedRadius - 2 : normalRadius}`,
+      );
+
     if (showDetails) {
+      // Create a group for the details box.
       const details = nodeSelection
         .append("g")
         .attr("class", "details")
+        // This group will scale with the zoom transform.
         .attr("transform", `translate(0, ${expandedRadius + 10})`);
+      details.raise();
 
-      // Add background rectangle
-      details
+      // Append the background rectangle.
+      const detailsRect = details
         .append("rect")
         .attr("x", -100)
         .attr("y", 0)
         .attr("width", detailsWidth)
-        .attr("height", detailsHeight)
+        .attr("height", detailsHeight) // will be updated after measuring text
         .attr("fill", "white")
-        .attr("stroke", "#ccc");
-      // Add content
+        .attr("stroke", "#e0e0e0")
+        .attr("stroke-width", 1)
+        .attr("rx", 10)
+        .attr("ry", 10)
+        .attr("filter", "url(#dropShadow)");
+      detailsRect.attr("data-height", detailsHeight);
+
+      // Create a drop shadow definition if needed.
+      const defs = svg.select("defs");
+      if (defs.empty()) {
+        svg.append("defs").append("filter").attr("id", "dropShadow").html(`
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="offsetblur"/>
+            <feFlood flood-color="#00000033"/>
+            <feComposite in2="offsetblur" operator="in"/>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          `);
+      }
+
+      // Create a group for details content.
       const content = details.append("g").attr("transform", "translate(0, 10)");
 
-      content
-        .append("text")
-        .attr("x", 0)
-        .attr("data-original-y", 20)
-        .attr("y", 20)
-        .attr("text-anchor", "middle")
-        .text(`Date: ${d.date}`);
+      // Helper function to add text.
+      const addText = (txt, y, options = {}) => {
+        content
+          .append("text")
+          .attr("x", 0)
+          .attr("y", y)
+          .attr("data-original-y", y)
+          .attr("text-anchor", "middle")
+          .attr("font-size", "12px")
+          .attr("fill", options.color || "#333")
+          .attr("font-weight", options.fontWeight || "normal")
+          .text(txt);
+      };
 
-      content
-        .append("text")
-        .attr("x", 0)
-        .attr("y", 40)
-        .attr("data-original-y", 40)
-        .attr("text-anchor", "middle")
-        .text(`Organization: ${d.properties.organization}`);
+      addText(`${d.name}`, 20, { fontWeight: "bold" });
+      addText(`Date: ${d.date}`, 40);
+      addText(`Organization: ${d.properties.organization}`, 60);
 
-      // Clickable paper link
-      content
-        .append("a")
-        .attr("xlink:href", d.link)
-        .attr("target", "_blank")
+      // Create and wrap the description text.
+      const description = content
         .append("text")
         .attr("x", 0)
         .attr("y", 80)
+        .attr("dy", "0em")
         .attr("data-original-y", 80)
         .attr("text-anchor", "middle")
-        .attr("fill", "blue")
+        .attr("text-align", "justify")
+        .attr("font-size", "12px")
+        .attr("fill", "#333")
+        .text(`${d.properties.description}`);
+      wrapText(description, detailsWidth - 20);
+
+      // Measure the description and update the background rectangle height.
+      const descBBox = description.node().getBBox();
+      const newDetailsHeight = descBBox.y + descBBox.height + 40; // extra padding
+      detailsRect
+        .attr("height", newDetailsHeight)
+        .attr("data-height", newDetailsHeight);
+
+      // Position the "View Paper" link inside the box.
+      const linkY = newDetailsHeight - 20;
+      const linkGroup = content
+        .append("g")
         .style("cursor", "pointer")
+        .on("click", () => {
+          window.open(d.link, "_blank");
+        });
+      linkGroup
+        .append("text")
+        .attr("x", 0)
+        .attr("y", linkY)
+        .attr("data-original-y", linkY)
+        .attr("text-anchor", "middle")
+        .attr("fill", "blue")
+        .attr("font-size", "12px")
         .style("text-decoration", "underline")
         .text("View Paper");
     }
   }
 
+  // --- Simulation Tick Handler ---
   function ticked() {
     nodeElements.attr(
       "transform",
