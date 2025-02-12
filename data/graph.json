@@ -309,6 +309,72 @@
       }
     },
     {
+      "id": "gemeni",
+      "name": "Gemeni",
+      "date": "2023-05-10",
+      "link": "https://arxiv.org/abs/2312.11805",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "Google Gemini is a powerful family of AI models designed for top-tier reasoning and multimodal capabilities. Built on enhanced Transformer decoders, it efficiently processes long-context inputs (up to 32K tokens) using optimized attention mechanisms. Gemini 1 supports text, images, audio, and video seamlessly, with model sizes ranging from 1.8B to 3.25B parameters."
+      }
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "date": "2023-11-15",
+      "link": "https://arxiv.org/abs/2204.14198",
+      "image": "deepmind.webp",
+      "properties": {
+        "organization": "DeepMind",
+        "description": "Flamingo is a visual-language model designed to seamlessly integrate images and videos with text, allowing it to generate natural language responses conditioned on visual content. It builds on pretrained vision and language models, linking them with a specialized Perceiver Resampler that distills visual features into a compact set of tokens. These tokens are then processed using gated cross-attention layers interleaved within a frozen large language model (LLM), ensuring stable training and strong performance. The model comes in multiple sizes, with the largest version—Flamingo-80B—based on a 70B parameter language model plus additional vision-text processing layers. It excels at few-shot learning, achieving state-of-the-art results on various image and video understanding tasks without requiring extensive fine-tuning."
+      }
+    },
+    {
+      "id": "coca",
+      "name": "coca",
+      "date": "2023-05-10",
+      "link": "https://arxiv.org/abs/2205.01917",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "CoCa (Contrastive Captioner) is a vision-language model that integrates contrastive learning and image captioning within a unified encoder-decoder architecture. It consists of a Vision Transformer (ViT) as the image encoder and a text decoder that is divided into unimodal and multimodal components. This structure allows the model to generate text representations independently and in relation to visual data. CoCa supports both contrastive and generative learning objectives, enabling it to perform tasks such as image-text retrieval and caption generation. It is available in multiple sizes, with the largest version containing 2.1 billion parameters. The model is designed for efficiency, sharing computation between its two training objectives. It has demonstrated strong zero-shot performance on various vision-language tasks, including image classification and video understanding, without requiring task-specific fine-tuning."
+      }
+    },
+    {
+      "id": "pali",
+      "name": "PaLi",
+      "date": "2023-07-05",
+      "link": "https://arxiv.org/abs/2209.06794",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "PaLI (Pathways Language and Image) is a multimodal model designed to handle both vision and language tasks within a unified architecture. It combines a Vision Transformer (ViT) for processing images and an mT5 encoder-decoder for text generation. The model does not use task-specific components but instead relies on text-based prompts to distinguish between tasks. PaLI is available in multiple sizes, with the largest version (PaLI-17B) containing 17 billion parameters—4 billion in the vision encoder and 13 billion in the text component. It has demonstrated strong performance on a range of tasks, including image captioning, visual question answering, and text understanding across multiple languages. Its scalability suggests potential for further improvements in vision-language integration."
+      }
+    },
+    {
+      "id": "dalle",
+      "name": "DALL-E",
+      "date": "2021-02-26",
+      "link": "https://arxiv.org/abs/2102.12092",
+      "image": "openai.jpg",
+      "properties": {
+        "organization": "OpenAI",
+        "description": "DALL·E is a deep learning model designed to generate images from text descriptions. It works by using a two-stage approach: first, a discrete variational autoencoder (dVAE) compresses high-resolution images into a 32×32 grid of image tokens, significantly reducing memory requirements. Then, a massive 12-billion parameter autoregressive transformer models the relationship between text and image tokens, generating new images by predicting pixel arrangements from text prompts. DALL·E excels at creating imaginative and coherent images, thanks to its ability to capture both fine details and broader visual structures. It has been trained on a vast dataset of text-image pairs, enabling it to generate diverse and contextually relevant visuals. While it produces strikingly realistic images, it can sometimes struggle with complex spatial relationships and compositional accuracy."
+      }
+    },
+    {
+      "id": "usm",
+      "name": "USM",
+      "date": "2023-09-25",
+      "link": "https://arxiv.org/abs/2303.01037",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "The Universal Speech Model (USM) is a large-scale AI system designed for multilingual speech recognition and translation. Built around a 2-billion-parameter Conformer architecture—a hybrid of convolutional and transformer networks—it’s trained on a vast mix of data: 12 million hours of unlabeled audio from 300+ languages, 28 billion sentences of text in 1,140 languages, and smaller labeled datasets for fine-tuning."
+      }
+    },
+    {
       "id": "big-bench-2022",
       "name": "BIG-bench",
       "date": "2022-06-01",
@@ -761,6 +827,15 @@
     { "source": "palm-2022", "target": "palm-e-2023" },
     { "source": "gpt3-2020", "target": "gpt4-2023" },
     { "source": "foundation-models-2021", "target": "fineweb-2024" },
-    { "source": "transformers-2017", "target": "qwen2.5-2024" }
+    { "source": "transformers-2017", "target": "qwen2.5-2024" },
+    { "source": "transformers-2017", "target": "gemeni" },
+    { "source": "flamingo", "target": "gemeni" },
+    { "source": "coca", "target": "gemeni" },
+    { "source": "usm", "target": "gemeni" },
+    { "source": "dalle", "target": "gemeni" },
+    { "source": "pali", "target": "gemeni" },
+    { "source": "transformers-2017", "target": "dalle" },
+    { "source": "transformers-2017", "target": "coca" },
+    { "source": "chinchilla-2022", "target": "flamingo" }
   ]
 }
