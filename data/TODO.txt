@@ -10,3 +10,4 @@
 
 # Considerations for future additons
 - For simplicity, perhaps only include models that have some sort of technical paper written on them. It is hard to trace a model's sources without it.
+- Dates can get a bit fuzzy, but unless otherwise noted use the initial publication date of the model's paper

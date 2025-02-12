@@ -311,7 +311,7 @@
     {
       "id": "gemeni",
       "name": "Gemeni",
-      "date": "2023-05-10",
+      "date": "2023-12-19",
       "link": "https://arxiv.org/abs/2312.11805",
       "image": "google.png",
       "properties": {
@@ -322,7 +322,7 @@
     {
       "id": "flamingo",
       "name": "Flamingo",
-      "date": "2023-11-15",
+      "date": "2022-04-29",
       "link": "https://arxiv.org/abs/2204.14198",
       "image": "deepmind.webp",
       "properties": {
@@ -333,7 +333,7 @@
     {
       "id": "coca",
       "name": "coca",
-      "date": "2023-05-10",
+      "date": "2022-05-04",
       "link": "https://arxiv.org/abs/2205.01917",
       "image": "google.png",
       "properties": {
@@ -344,7 +344,7 @@
     {
       "id": "pali",
       "name": "PaLi",
-      "date": "2023-07-05",
+      "date": "2022-09-14",
       "link": "https://arxiv.org/abs/2209.06794",
       "image": "google.png",
       "properties": {
@@ -355,7 +355,7 @@
     {
       "id": "dalle",
       "name": "DALL-E",
-      "date": "2021-02-26",
+      "date": "2021-02-24",
       "link": "https://arxiv.org/abs/2102.12092",
       "image": "openai.jpg",
       "properties": {
@@ -366,7 +366,7 @@
     {
       "id": "usm",
       "name": "USM",
-      "date": "2023-09-25",
+      "date": "2023-03-02",
       "link": "https://arxiv.org/abs/2303.01037",
       "image": "google.png",
       "properties": {
