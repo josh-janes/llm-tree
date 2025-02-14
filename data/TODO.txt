@@ -1,12 +1,7 @@
 # Missing models
-- Vision Transformer (ViT, ViT-G, ViT-e)
 - CLIP?
 - ALIGN?
 - mT5?
-- Sparse transformer
-- Conformer
-- BEST-RQ
-- RNN-T
 
 # Considerations for future additons
 - For simplicity, perhaps only include models that have some sort of technical paper written on them. It is hard to trace a model's sources without it.

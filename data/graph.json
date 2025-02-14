@@ -309,7 +309,7 @@
       }
     },
     {
-      "id": "Gemini",
+      "id": "gemini",
       "name": "Gemini",
       "date": "2023-12-19",
       "link": "https://arxiv.org/abs/2312.11805",
@@ -758,84 +758,620 @@
         "organization": "Anthropic",
         "description": "Developed by Anthropic, Claude 3 is a large language model that emphasizes safety and helpfulness. Built with constitutional AI principles and refined through iterative human feedback, it strives to produce reliable, well-aligned responses while handling complex tasks."
       }
+    },
+    {
+      "id": "lima",
+      "name": "LIMA",
+      "date": "2023-05-18",
+      "link": "https://arxiv.org/abs/2305.11206",
+      "image": "meta.png",
+      "properties": {
+          "organization": "Meta",
+          "description": "LIMA is a large language model architecture that focuses on efficient training and inference. It utilizes a transformer-based architecture with various optimizations for reduced memory consumption and faster processing speeds, making it suitable for deployment on resource-constrained devices."
+      }
+    },
+    {
+      "id": "minigpt-4",
+      "name": "MiniGPT-4",
+      "date": "2023-04-20",
+      "link": "https://arxiv.org/abs/2304.10592",
+      "image": "abdullah.jpg",
+      "properties": {
+          "organization": "King Abdullah University",
+          "description": "MiniGPT-4 is a transformer-based language model known for its relatively small size compared to other models like GPT-3. It's designed for efficiency and can perform tasks such as text generation, translation, and question answering. MiniGPT-4 incorporates architectural elements like attention mechanisms and feedforward networks to process and understand language."
+      }
+    },
+    {
+      "id": "freelb-2019",
+      "name": "FreeLB",
+      "date": "2019-09-25",
+      "link": "https://arxiv.org/abs/1909.11764",
+      "image": "microsoft.png",
+      "properties": {
+          "organization": "Microsoft",
+          "description": "FreeLB (Free Logit-Based Bounds) is a method for training large language models that focuses on improving robustness and generalization. Instead of directly minimizing the standard cross-entropy loss, FreeLB introduces an adversarial component. This component attempts to find inputs that maximize the model's uncertainty or cause it to make incorrect predictions. By encouraging the model to be more robust to these adversarial examples, FreeLB aims to improve its performance on unseen data and reduce the risk of making unexpected errors."
+      }
+    },
+    {
+      "id": "xlnet-2020",
+      "name": "XLNet",
+      "date": "2019-06-19",
+      "link": "https://arxiv.org/abs/1906.08237",
+      "image": "cmu.jpg",
+      "properties": {
+          "organization": "Carnegie Melon",
+          "description": "XLNet-2020 is a transformer-based language model that introduces a novel approach to pretraining called permutation language modeling. This method allows XLNet to capture long-range dependencies in text more effectively than traditional Transformer models, leading to improved performance on tasks like natural language inference and sentiment analysis."
+      }
+    },
+    {
+      "id": "vision-transformer",
+      "name": "ViT",
+      "date": "",
+      "link": "https://arxiv.org/abs/2010.11929",
+      "image": "google.png",
+      "properties": {
+          "organization": "Google",
+          "description": "Vision Transformer (ViT) is a neural network architecture that applies the transformer, originally designed for natural language processing, to image recognition tasks. Instead of using convolutional layers common in traditional image models, ViT divides an input image into patches and treats them as tokens, similar to words in text. These patches are then processed by transformer layers, allowing the model to learn long-range dependencies and relationships within the image. ViT has shown impressive performance on image classification tasks, often rivaling or exceeding convolutional neural networks."
+      }
+    },
+    {
+      "id": "sparse",
+      "name": "Sparse",
+      "date": "2019-04-23",
+      "link": "https://arxiv.org/abs/1904.10509",
+      "image": "openai.jpg",
+      "properties": {
+          "organization": "OpenAI",
+          "description": "Sparse refers to a class of Transformer models that utilize sparsity techniques to reduce the number of connections between neurons. This significantly decreases the model's computational cost and memory footprint, making it more efficient for training and deployment."
+      }
+    },
+    {
+      "id": "conformer",
+      "name": "Conformer",
+      "date": "2023-07-02",
+      "link": "https://arxiv.org/abs/2307.00461",
+      "image": "stanford.png",
+      "properties": {
+          "organization": "Stanford",
+          "description": "Conformer is a transformer-based architecture for speech recognition that uses convolution instead of self-attention to process audio data more efficiently. This allows it to capture local dependencies in the audio signal while still benefiting from the long-range context modeling abilities of transformers. Conformer models have shown strong performance on various speech recognition tasks."
+      }
+    },
+    {
+      "id": "best-rq",
+      "name": "BEST-RQ",
+      "date": "2022-02-03",
+      "link": "https://arxiv.org/abs/2202.01855",
+      "image": "google.png",
+      "properties": {
+          "organization": "Google",
+          "description": "BEST-RQ refers to a set of evaluation metrics used for assessing the quality of machine translation outputs. These metrics consider factors like fluency, adequacy, and meaning preservation to provide a comprehensive measure of translation accuracy."
+      }
+    },
+    {
+      "id": "gemini2",
+      "name": "Gemini 2",
+      "date": "2024-12-11",
+      "link": "https://www.researchgate.net/publication/387089907_Unveiling_Google's_Gemini_20_A_Comprehensive_Study_of_its_Multimodal_AI_Design_Advanced_Architecture_and_Real-World_Applications",
+      "image": "google.png",
+      "properties": {
+          "organization": "Google",
+          "description": "Gemini 2.0 is Google's successor to Gemini. Built on an optimized Transformer architecture, it improves upon previous models with enhanced logical reasoning, efficient tool use, and the ability to make autonomous decisions. Key advancements include the use of JAX/XLA frameworks for scalability, integration with Google's Sixth-Generation TPUs for faster processing, and a Multimodal Chain-of-Thought (CoT) approach for more structured reasoning. Gemini 2.0 also features 'Gemini Flash' for low-latency tasks and introduces real-time image generation and customizable Text-to-Speech (TTS) capabilities. These improvements make it a powerful tool for research, enterprise applications, and complex problem-solving."
+      }
     }
   ],
 
   "links": [
-    { "source": "transformers-2017", "target": "gpt1-2018" },
-    { "source": "transformers-2017", "target": "bert-2018" },
-    { "source": "transformers-2017", "target": "t5-2019" },
-    { "source": "transformers-2017", "target": "claude-3" },
-    { "source": "transformers-2017", "target": "scaling-law-2020" },
-    { "source": "transformers-2017", "target": "deepseek-v2-2024" },
-    { "source": "foundation-models-2021", "target": "mamba-2023" },
-    { "source": "gpt3-2020", "target": "palm-2022" },
-    { "source": "transformers-2017", "target": "olmo-2024" },
-    { "source": "bert-2018", "target": "megatron-lm-2019" },
-    { "source": "gpt1-2018", "target": "gpt2-2019" },
-    { "source": "gpt2-2019", "target": "gpt3-2020" },
-    { "source": "scaling-law-2020", "target": "gpt3-2020" },
-    { "source": "megatron-lm-2019", "target": "gpt3-2020" },
-    { "source": "gpt3-2020", "target": "codex-2021" },
-    { "source": "gpt3-2020", "target": "instructgpt-2022" },
-    { "source": "gpt3-2020", "target": "webgpt-2021" },
-    { "source": "gpt3-2020", "target": "cot-2022" },
-    { "source": "cot-2022", "target": "deepseek-v3-2024" },
-    { "source": "t5-2019", "target": "flan-2021" },
-    { "source": "t5-2019", "target": "t0-2021" },
-    { "source": "transformers-2017", "target": "switch-transformers-2021" },
-    { "source": "t5-2019", "target": "ul2-2022" },
-    { "source": "gpt3-2020", "target": "chinchilla-2022" },
-    { "source": "gpt3-2020", "target": "bloom-2022" },
-    { "source": "gpt3-2020", "target": "galactica-2022" },
-    { "source": "opt-2022", "target": "opt-iml-2022" },
-    { "source": "flan-2021", "target": "flan-t5-2022" },
-    { "source": "palm-2022", "target": "palm2-2023" },
-    { "source": "llama-2023", "target": "llama2-2023" },
-    { "source": "llama2-2023", "target": "llama3-2024" },
-    { "source": "mamba-2023", "target": "mamba2-2024" },
-    { "source": "deepseek-v2-2024", "target": "deepseek-v3-2024" },
-    { "source": "deepseek-v3-2024", "target": "deepseek-r1-2025" },
-    { "source": "olmo-2024", "target": "olmoe-2024" },
-    { "source": "gpt3-2020", "target": "rwkv-2023" },
-    { "source": "instructgpt-2022", "target": "dromedary-2023" },
-    { "source": "gpt3-2020", "target": "dpo-2023" },
-    { "source": "gpt3-2020", "target": "tot-2023" },
-    { "source": "kosmos-1-2023", "target": "llava-2023" },
-    { "source": "llama2-2023", "target": "mistral-7b-2023" },
-    { "source": "gpt3-2020", "target": "pythia-2023" },
-    { "source": "flan-2021", "target": "flan-2023" },
-    { "source": "switch-transformers-2021", "target": "deepseek-v2-2024" },
-    { "source": "transformers-2017", "target": "zero-2019" },
-    { "source": "transformers-2017", "target": "foundation-models-2021" },
-    { "source": "transformers-2017", "target": "glam-2021" },
-    { "source": "transformers-2017", "target": "retro-2021" },
-    { "source": "transformers-2017", "target": "gopher-2021" },
-    { "source": "transformers-2017", "target": "lamda-2022" },
-    { "source": "gpt3-2020", "target": "minerva-2022" },
-    { "source": "megatron-lm-2019", "target": "megatron-turing-2022" },
-    { "source": "scaling-law-2020", "target": "emergent-2022" },
-    { "source": "foundation-models-2021", "target": "big-bench-2022" },
-    { "source": "zero-2019", "target": "metalm-2022" },
-    { "source": "instructgpt-2022", "target": "sparrow-2022" },
-    { "source": "transformers-2017", "target": "glm-130b-2022" },
-    { "source": "foundation-models-2021", "target": "helm-2022" },
-    { "source": "transformers-2017", "target": "opt-2022" },
-    { "source": "gpt3-2020", "target": "llama-2023" },
-    { "source": "gpt3-2020", "target": "kosmos-1-2023" },
-    { "source": "transformers-2017", "target": "lru-2023" },
-    { "source": "palm-2022", "target": "palm-e-2023" },
-    { "source": "gpt3-2020", "target": "gpt4-2023" },
-    { "source": "foundation-models-2021", "target": "fineweb-2024" },
-    { "source": "transformers-2017", "target": "qwen2.5-2024" },
-    { "source": "transformers-2017", "target": "Gemini" },
-    { "source": "flamingo", "target": "Gemini" },
-    { "source": "coca", "target": "Gemini" },
-    { "source": "usm", "target": "Gemini" },
-    { "source": "dalle", "target": "Gemini" },
-    { "source": "pali", "target": "Gemini" },
-    { "source": "transformers-2017", "target": "dalle" },
-    { "source": "transformers-2017", "target": "coca" },
-    { "source": "chinchilla-2022", "target": "flamingo" }
+    {
+        "source": "transformers-2017",
+        "target": "gemini"
+    },
+    {
+      "source": "gemini",
+      "target": "gemini2"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "gemini"
+    },
+    {
+        "source": "bert-2018",
+        "target": "gemini"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "gemini"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "lamda-2022"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "bert-2018",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "t5-2019",
+        "target": "t0-2021"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "instructgpt-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "opt-2022"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "bert-2018"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "gpt2-2019"
+    },
+    {
+        "source": "gpt1-2018",
+        "target": "gpt2-2019"
+    },
+    {
+        "source": "bert-2018",
+        "target": "t5-2019"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "megatron-turing-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "codex-2021"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "flan-2021"
+    },
+    {
+        "source": "bert-2018",
+        "target": "flan-2021"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "t5-2019"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "t5-2019"
+    },
+    {
+        "source": "gpt1-2018",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "megatron-lm-2019"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "codex-2021"
+    },
+    {
+        "source": "megatron-lm-2019",
+        "target": "megatron-turing-2022"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "flan-2021"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "palm-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "gopher-2021"
+    },
+    {
+        "source": "flan-2021",
+        "target": "flan-t5-2022"
+    },
+    {
+        "source": "t5-2019",
+        "target": "flan-2021"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "flan-t5-2022"
+    },
+    {
+        "source": "flan-2021",
+        "target": "gemini"
+    },
+    {
+        "source": "t5-2019",
+        "target": "gemini"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "flan-2021"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "flamingo"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "flamingo"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "instructgpt-2022"
+    },
+    {
+        "source": "t5-2019",
+        "target": "metalm-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "sparrow-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "glm-130b-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "galactica-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "cot-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "kosmos-1-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "llama-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "palm2-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "rwkv-2023"
+    },
+    {
+        "source": "gpt1-2018",
+        "target": "rwkv-2023"
+    },
+    {
+        "source": "bert-2018",
+        "target": "rwkv-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "dpo-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "dpo-2023"
+    },
+    {
+        "source": "flan-t5-2022",
+        "target": "dpo-2023"
+    },
+    {
+        "source": "cot-2022",
+        "target": "tot-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "bert-2018",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "t5-2019",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "mamba-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "fineweb-2024"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "olmoe-2024"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "flan-2023"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "flan-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "glm-130b-2022"
+    },
+    {
+        "source": "gpt2-2019",
+        "target": "glm-130b-2022"
+    },
+    {
+        "source": "bert-2018",
+        "target": "glm-130b-2022"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "gpt1-2018"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "claude-3"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "scaling-law-2020"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "deepseek-v2-2024"
+    },
+    {
+        "source": "foundation-models-2021",
+        "target": "mamba-2023"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "olmo-2024"
+    },
+    {
+        "source": "bert-2018",
+        "target": "megatron-lm-2019"
+    },
+    {
+        "source": "scaling-law-2020",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "megatron-lm-2019",
+        "target": "gpt3-2020"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "webgpt-2021"
+    },
+    {
+        "source": "cot-2022",
+        "target": "deepseek-v3-2024"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "switch-transformers-2021"
+    },
+    {
+        "source": "t5-2019",
+        "target": "ul2-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "chinchilla-2022"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "bloom-2022"
+    },
+    {
+        "source": "opt-2022",
+        "target": "opt-iml-2022"
+    },
+    {
+        "source": "palm-2022",
+        "target": "palm2-2023"
+    },
+    {
+        "source": "llama-2023",
+        "target": "llama2-2023"
+    },
+    {
+        "source": "llama2-2023",
+        "target": "llama3-2024"
+    },
+    {
+        "source": "mamba-2023",
+        "target": "mamba2-2024"
+    },
+    {
+        "source": "deepseek-v2-2024",
+        "target": "deepseek-v3-2024"
+    },
+    {
+        "source": "deepseek-v3-2024",
+        "target": "deepseek-r1-2025"
+    },
+    {
+        "source": "olmo-2024",
+        "target": "olmoe-2024"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "rwkv-2023"
+    },
+    {
+        "source": "instructgpt-2022",
+        "target": "dromedary-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "tot-2023"
+    },
+    {
+        "source": "kosmos-1-2023",
+        "target": "llava-2023"
+    },
+    {
+        "source": "llama2-2023",
+        "target": "mistral-7b-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "pythia-2023"
+    },
+    {
+        "source": "flan-2021",
+        "target": "flan-2023"
+    },
+    {
+        "source": "switch-transformers-2021",
+        "target": "deepseek-v2-2024"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "zero-2019"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "foundation-models-2021"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "glam-2021"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "retro-2021"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "gopher-2021"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "minerva-2022"
+    },
+    {
+        "source": "scaling-law-2020",
+        "target": "emergent-2022"
+    },
+    {
+        "source": "foundation-models-2021",
+        "target": "big-bench-2022"
+    },
+    {
+        "source": "zero-2019",
+        "target": "metalm-2022"
+    },
+    {
+        "source": "instructgpt-2022",
+        "target": "sparrow-2022"
+    },
+    {
+        "source": "foundation-models-2021",
+        "target": "helm-2022"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "opt-2022"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "lru-2023"
+    },
+    {
+        "source": "palm-2022",
+        "target": "palm-e-2023"
+    },
+    {
+        "source": "gpt3-2020",
+        "target": "gpt4-2023"
+    },
+    {
+        "source": "foundation-models-2021",
+        "target": "fineweb-2024"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "qwen2.5-2024"
+    },
+    {
+        "source": "flamingo",
+        "target": "gemini"
+    },
+    {
+        "source": "coca",
+        "target": "gemini"
+    },
+    {
+        "source": "usm",
+        "target": "gemini"
+    },
+    {
+        "source": "dalle",
+        "target": "gemini"
+    },
+    {
+        "source": "pali",
+        "target": "gemini"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "dalle"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "coca"
+    },
+    {
+        "source": "chinchilla-2022",
+        "target": "flamingo"
+    },
+    {
+        "source": "xlnet-2020",
+        "target": "best-rq"
+    },
+    {
+        "source": "xlnet-2020",
+        "target": "minigpt-4"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "gemini2"
+    },
+    {
+        "source": "transformers-2017",
+        "target": "sparse"
+    },
+    {
+        "source": "bert-2018",
+        "target": "freelb-2019"
+    },
+    {
+        "source": "bert-2018",
+        "target": "xlnet-2020"
+    }
   ]
 }
