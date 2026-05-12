@@ -1055,6 +1055,127 @@
         "organization": "OpenAI",
         "description": "GPT-5 unified OpenAI's two model lines—fast general intelligence and deep reasoning—into a single system that automatically routes between them based on query difficulty. It set records across every major benchmark at launch: 94.6% on AIME 2025, 74.9% on SWE-bench Verified, 84.2% on MMMU, and 46.2% on HealthBench Hard. OpenAI explicitly trained it to be less sycophantic, prioritizing accurate responses over agreeable ones—a direct response to longstanding user criticism."
       }
+    },
+    {
+      "id": "grok1-2024",
+      "name": "Grok 1",
+      "date": "2024-03-17",
+      "link": "https://x.ai/blog/grok-os",
+      "image": "xai.png",
+      "properties": {
+        "organization": "xAI",
+        "description": "xAI open-sourced Grok 1's 314B parameter mixture-of-experts weights in March 2024—the largest open-weight MoE model released at the time. Built to be integrated with real-time X (formerly Twitter) data, Grok 1 demonstrated that a newly founded lab could rapidly train frontier-scale models, and its open release surprised the industry by making a model of that scale freely available for the first time."
+      }
+    },
+    {
+      "id": "grok3-2025",
+      "name": "Grok 3",
+      "date": "2025-02-17",
+      "link": "https://x.ai/blog/grok-3",
+      "image": "xai.png",
+      "properties": {
+        "organization": "xAI",
+        "description": "Grok 3 was trained on xAI's custom 200,000-GPU Memphis cluster—10x the compute of Grok 2—in a 122-day run. At launch it outperformed Claude 3.7 Sonnet and GPT-4o on AIME 2025 and GPQA Diamond benchmarks. It introduced 'Big Brain' extended-thinking mode and DeepSearch for real-time web research synthesis, demonstrating that xAI could close the capability gap with established frontier labs through sheer compute investment."
+      }
+    },
+    {
+      "id": "grok4-2025",
+      "name": "Grok 4",
+      "date": "2025-07-10",
+      "link": "https://x.ai/news/grok-4",
+      "image": "xai.png",
+      "properties": {
+        "organization": "xAI",
+        "description": "Grok 4 delivered a significant capability step over Grok 3, achieving top-tier results on frontier reasoning benchmarks including AIME and GPQA at launch. Available to SuperGrok and API subscribers, it represented xAI's most competitive frontier model to date, pushing the lab into direct competition with OpenAI o3 and Claude Opus on hard science and mathematics reasoning tasks."
+      }
+    },
+    {
+      "id": "claude4-2025",
+      "name": "Claude 4",
+      "date": "2025-05-22",
+      "link": "https://www.anthropic.com/news/claude-4",
+      "image": "anthropic.webp",
+      "properties": {
+        "organization": "Anthropic",
+        "description": "Claude 4 (Opus 4 and Sonnet 4) was Anthropic's first model family with hybrid reasoning: users could choose near-instant responses or extended thinking within the same model. Opus 4 became the top coding model at launch with 72.5% on SWE-bench Verified, and both models adopted a new training approach that made Claude more direct and forthright, less prone to hedging, and better at refusing only when genuinely warranted rather than out of excessive caution."
+      }
+    },
+    {
+      "id": "claude45-2025",
+      "name": "Claude Opus 4.5",
+      "date": "2025-11-24",
+      "link": "https://www.anthropic.com/news/claude-opus-4-5",
+      "image": "anthropic.webp",
+      "properties": {
+        "organization": "Anthropic",
+        "description": "Claude Opus 4.5 was the first AI model to break 80% on SWE-bench Verified (80.9%), establishing a new ceiling for agentic software engineering. Priced at $5/$25 per million tokens—a 67% reduction from prior Opus pricing—it made frontier-class agentic coding economically viable at scale, and introduced 'Infinite Chats' to handle multi-session context continuity in long-running autonomous workflows."
+      }
+    },
+    {
+      "id": "claude47-2026",
+      "name": "Claude Opus 4.7",
+      "date": "2026-04-16",
+      "link": "https://www.anthropic.com/news/claude-opus-4-7",
+      "image": "anthropic.webp",
+      "properties": {
+        "organization": "Anthropic",
+        "description": "Claude Opus 4.7 is Anthropic's most capable publicly released model as of mid-2026, with a step-change improvement in agentic software engineering, 1M-token context window (beta), and stronger self-checking and instruction following. It is the first model in Anthropic's lineup to support 1M-token context in production, enabling analysis of entire large codebases and document corpora in a single pass."
+      }
+    },
+    {
+      "id": "gemini3-2025",
+      "name": "Gemini 3",
+      "date": "2025-11-18",
+      "link": "https://blog.google/products-and-platforms/products/gemini/gemini-3/",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "Gemini 3 Pro delivered state-of-the-art reasoning and multimodal capability at launch, introducing 'Deep Think' mode that iterates through multiple hypotheses simultaneously for hard math, science, and logic problems. It was the first Gemini model with native Computer Use tool support, enabling it to control a browser or desktop autonomously. Gemini 3 Flash, released simultaneously, achieved frontier-class performance rivaling larger models while remaining fast and cost-efficient."
+      }
+    },
+    {
+      "id": "gemini31-2026",
+      "name": "Gemini 3.1 Pro",
+      "date": "2026-02-19",
+      "link": "https://deepmind.google/models/gemini/",
+      "image": "google.png",
+      "properties": {
+        "organization": "Google",
+        "description": "Gemini 3.1 Pro pushed Google's frontier further with a 77.1% score on ARC-AGI-2—one of the hardest general reasoning benchmarks—and significant improvements in complex multi-step agentic workflows. As Google's most capable publicly available model as of early 2026, it underscored DeepMind's strategy of tight iteration cycles between flagship Pro releases and efficiency-focused Flash variants."
+      }
+    },
+    {
+      "id": "mistral3-2025",
+      "name": "Mistral 3",
+      "date": "2025-12-04",
+      "link": "https://mistral.ai/news/mistral-3",
+      "image": "mistral.png",
+      "properties": {
+        "organization": "Mistral",
+        "description": "Mistral 3 (Mistral Large 3) was a coordinated 10-model release including a 675B total / 41B active parameter MoE flagship with 256K context window, multimodal capability, and Apache 2.0 licensing—plus nine compact Ministral edge models. Its open-weight frontier release represented Mistral's most serious challenge yet to closed proprietary APIs, closing the gap with GPT-4-class models while remaining fully open for commercial use."
+      }
+    },
+    {
+      "id": "phi4r-2025",
+      "name": "Phi-4 Reasoning",
+      "date": "2025-05-01",
+      "link": "https://www.microsoft.com/en-us/research/publication/phi-4-reasoning-technical-report/",
+      "image": "microsoft.png",
+      "properties": {
+        "organization": "Microsoft",
+        "description": "Phi-4-reasoning demonstrated that a 14B open-weight model trained with reinforcement learning could compete with models many times its size on math and science reasoning benchmarks. By combining Phi-4's high-quality synthetic training data with RL fine-tuning, it showed that reasoning capability—previously thought to require frontier-scale models—could be unlocked in small, efficient, deployable models, making strong reasoning accessible on edge hardware."
+      }
+    },
+    {
+      "id": "gpt55-2026",
+      "name": "GPT-5.5",
+      "date": "2026-04-23",
+      "link": "https://openai.com/index/introducing-gpt-5-5/",
+      "image": "openai.jpg",
+      "properties": {
+        "organization": "OpenAI",
+        "description": "GPT-5.5 is OpenAI's most capable publicly available model as of May 2026, described as their 'smartest and most intuitive' release. GPT-5.5 Instant—the free-tier default from May 5, 2026—reduces hallucinations by 52.5% versus its predecessor on high-stakes domains including law, medicine, and finance, and can reference past conversations and integrate with Gmail for personalized responses, blurring the line between assistant and persistent agent."
+      }
     }
   ],
 
@@ -1197,6 +1318,26 @@
     { "source": "llama3-2024", "target": "llama4-2025" },
     { "source": "olmo-2024", "target": "olmoe-2024" },
     { "source": "chatgpt-2022", "target": "gpt4-2023" },
-    { "source": "xlnet-2019", "target": "best-rq-2022" }
+    { "source": "xlnet-2019", "target": "best-rq-2022" },
+
+    { "source": "transformers-2017", "target": "grok1-2024" },
+    { "source": "gpt4-2023", "target": "grok1-2024" },
+    { "source": "grok1-2024", "target": "grok3-2025" },
+    { "source": "grok3-2025", "target": "grok4-2025" },
+
+    { "source": "claude37-2025", "target": "claude4-2025" },
+    { "source": "claude4-2025", "target": "claude45-2025" },
+    { "source": "claude45-2025", "target": "claude47-2026" },
+
+    { "source": "gemini25-2025", "target": "gemini3-2025" },
+    { "source": "gemini3-2025", "target": "gemini31-2026" },
+
+    { "source": "mistral-7b-2023", "target": "mistral3-2025" },
+    { "source": "mixtral-2024", "target": "mistral3-2025" },
+
+    { "source": "phi4-2024", "target": "phi4r-2025" },
+
+    { "source": "gpt5-2025", "target": "gpt55-2026" },
+    { "source": "o3-2025", "target": "gpt55-2026" }
   ]
 }

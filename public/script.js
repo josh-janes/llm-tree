@@ -27,6 +27,7 @@ const orgColors = {
   "BigScience":       "#607d8b",
   "EleutherAI et al.":"#546e7a",
   "Ai2":              "#00bcd4",
+  "xAI":              "#111111",
 };
 const defaultOrgColor = "#90a4ae";
 
