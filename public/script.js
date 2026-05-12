@@ -4,10 +4,39 @@ const height = window.innerHeight * 3; // Stretch vertically
 const margin = { top: 20, right: 20, bottom: 20, left: 60 };
 
 // Define radii for normal and expanded nodes.
-const normalRadius = 10;
+const minRadius = 8;
+const maxRadius = 22;
 const expandedRadius = 30;
 const nodeSpacing = 200;
 const textPadding = 40; // extra padding for text
+
+// Organization color palette — used for node rings and link gradients.
+const orgColors = {
+  "Google":           "#4285F4",
+  "OpenAI":           "#10a37f",
+  "Meta":             "#0064e0",
+  "DeepMind":         "#9c27b0",
+  "Microsoft":        "#00a4ef",
+  "Stanford":         "#8c1515",
+  "DeepSeek":         "#e84393",
+  "Anthropic":        "#d4691e",
+  "NVIDIA":           "#76b900",
+  "Mistral":          "#ff6f00",
+  "Alibaba":          "#ff6a00",
+  "HuggingFace":      "#ff9d00",
+  "BigScience":       "#607d8b",
+  "EleutherAI et al.":"#546e7a",
+  "Ai2":              "#00bcd4",
+};
+const defaultOrgColor = "#90a4ae";
+
+function orgColor(org) {
+  // Match partial org names so "Microsoft&NVIDIA", "CMU et al.", etc. get a color.
+  for (const key of Object.keys(orgColors)) {
+    if (org && org.includes(key)) return orgColors[key];
+  }
+  return defaultOrgColor;
+}
 
 const detailsWidth = 200;
 let detailsHeight = 120; // initial height (will be recalculated per node)
@@ -66,7 +95,7 @@ const zoom = d3
 
     container
       .selectAll("g.node > circle.outline")
-      .attr("r", (d) => (d.expanded ? expandedRadius : normalRadius) / scale) // Scale radius properly
+      .attr("r", (d) => (d.expanded ? expandedRadius : d.baseRadius) / scale)
       .attr("stroke-width", 1);
 
     // Maintain icon size
@@ -74,26 +103,26 @@ const zoom = d3
       .selectAll("g.node > image")
       .attr(
         "x",
-        (d) => -((d.expanded ? expandedRadius * 1.5 : normalRadius) / scale),
+        (d) => -((d.expanded ? expandedRadius * 1.5 : d.baseRadius) / scale),
       )
       .attr(
         "y",
-        (d) => -((d.expanded ? expandedRadius * 1.5 : normalRadius) / scale),
+        (d) => -((d.expanded ? expandedRadius * 1.5 : d.baseRadius) / scale),
       )
       .attr(
         "width",
-        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : normalRadius)) / scale,
+        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : d.baseRadius)) / scale,
       )
       .attr(
         "height",
-        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : normalRadius)) / scale,
+        (d) => (2 * (d.expanded ? expandedRadius * 1.5 : d.baseRadius)) / scale,
       );
 
     container
       .selectAll("g.node > circle")
       .attr(
         "r",
-        (d) => (d.expanded ? expandedRadius : normalRadius) / event.transform.k,
+        (d) => (d.expanded ? expandedRadius : d.baseRadius) / event.transform.k,
       );
 
     container
@@ -131,6 +160,20 @@ function renderGraph(graph) {
     textElement.remove();
   });
   tempSvg.remove();
+
+  // Compute out-degree (number of children) for each node.
+  const outDegree = {};
+  graph.nodes.forEach((d) => { outDegree[d.id] = 0; });
+  graph.links.forEach((l) => {
+    const srcId = l.source.id !== undefined ? l.source.id : l.source;
+    outDegree[srcId] = (outDegree[srcId] || 0) + 1;
+  });
+  const maxDegree = Math.max(...Object.values(outDegree), 1);
+  const radiusScale = d3.scaleSqrt().domain([0, maxDegree]).range([minRadius, maxRadius]);
+  graph.nodes.forEach((d) => {
+    d.baseRadius = radiusScale(outDegree[d.id] || 0);
+    d.orgColor = orgColor(d.properties.organization);
+  });
 
   // Set up a time scale for vertical positioning.
   const dateExtent = d3.extent(graph.nodes, (d) => d.dateObj);
@@ -194,8 +237,8 @@ function renderGraph(graph) {
     .force(
       "collision",
       d3.forceCollide((d) => {
-        const baseRadius = d.expanded ? expandedRadius : normalRadius;
-        return Math.max(baseRadius * 1.5, d.textWidth);
+        const r = d.expanded ? expandedRadius : d.baseRadius;
+        return Math.max(r * 1.5, d.textWidth);
       }),
     )
     .velocityDecay(0.7)
@@ -212,16 +255,45 @@ function renderGraph(graph) {
     }
   });
 
-  // Draw links.
+  // Create SVG defs for per-link gradients (and the drop-shadow filter).
+  const svgDefs = svg.append("defs");
+  svgDefs.append("filter").attr("id", "dropShadow").html(`
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+    <feOffset dx="0" dy="2" result="offsetblur"/>
+    <feFlood flood-color="#00000033"/>
+    <feComposite in2="offsetblur" operator="in"/>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  `);
+
+  graph.links.forEach((l, i) => {
+    const srcId = l.source.id !== undefined ? l.source.id : l.source;
+    const tgtId = l.target.id !== undefined ? l.target.id : l.target;
+    const srcNode = graph.nodes.find((n) => n.id === srcId);
+    const tgtNode = graph.nodes.find((n) => n.id === tgtId);
+    const gradId = `link-grad-${i}`;
+    l._gradId = gradId;
+    const grad = svgDefs
+      .append("linearGradient")
+      .attr("id", gradId)
+      .attr("gradientUnits", "userSpaceOnUse");
+    grad.append("stop").attr("offset", "0%").attr("stop-color", srcNode ? srcNode.orgColor : defaultOrgColor).attr("stop-opacity", 0.7);
+    grad.append("stop").attr("offset", "100%").attr("stop-color", tgtNode ? tgtNode.orgColor : defaultOrgColor).attr("stop-opacity", 0.7);
+  });
+
+  // Draw links as cubic bezier curves.
   const linkGroup = container.append("g").attr("class", "links");
   const linkElements = linkGroup
-    .selectAll("line")
+    .selectAll("path")
     .data(graph.links)
     .enter()
-    .append("line")
+    .append("path")
     .attr("class", "link")
+    .attr("fill", "none")
     .attr("stroke-width", 2)
-    .attr("stroke", "rgba(0,0,0,0.2)");
+    .attr("stroke", (d) => `url(#${d._gradId})`);
 
   // Draw nodes.
   const nodeGroup = container.append("g").attr("class", "nodes");
@@ -246,31 +318,31 @@ function renderGraph(graph) {
       updateNodeDetails(d3.select(this), d, d.expanded);
     });
 
-  // Node circles.
+  // Node circles — white fill, org-color ring.
   nodeElements
     .append("circle")
-    .attr("r", (d) => (d.expanded ? expandedRadius : normalRadius))
+    .attr("r", (d) => (d.expanded ? expandedRadius : d.baseRadius))
     .attr("fill", "white")
-    .attr("stroke", "white")
-    .attr("stroke-width", 4);
+    .attr("stroke", (d) => d.orgColor)
+    .attr("stroke-width", 3);
 
   // Node images.
   nodeElements
     .append("image")
     .attr("xlink:href", (d) => "icons/" + d.image)
-    .attr("x", (d) => -(d.expanded ? expandedRadius : normalRadius))
-    .attr("y", (d) => -(d.expanded ? expandedRadius : normalRadius))
-    .attr("width", (d) => 2 * (d.expanded ? expandedRadius : normalRadius))
-    .attr("height", (d) => 2 * (d.expanded ? expandedRadius : normalRadius))
+    .attr("x", (d) => -(d.expanded ? expandedRadius : d.baseRadius))
+    .attr("y", (d) => -(d.expanded ? expandedRadius : d.baseRadius))
+    .attr("width", (d) => 2 * (d.expanded ? expandedRadius : d.baseRadius))
+    .attr("height", (d) => 2 * (d.expanded ? expandedRadius : d.baseRadius))
     .attr(
       "clip-path",
-      (d) => `circle(${d.expanded ? expandedRadius : normalRadius}px)`,
+      (d) => `circle(${d.expanded ? expandedRadius : d.baseRadius}px)`,
     );
 
   // Node labels (direct children of g.node).
   nodeElements
     .append("text")
-    .attr("dy", (d) => (d.expanded ? 50 : 30))
+    .attr("dy", (d) => (d.expanded ? 50 : d.baseRadius + 14))
     .attr("text-anchor", "middle")
     .attr("font-size", "12px")
     .attr("fill", "white")
@@ -289,25 +361,25 @@ function renderGraph(graph) {
     // Update circle outline
     nodeSelection
       .select("circle.outline")
-      .attr("r", showDetails ? expandedRadius + 5 : normalRadius + 3)
+      .attr("r", showDetails ? expandedRadius + 5 : d.baseRadius + 3)
       .attr("stroke-width", 2 / d3.zoomTransform(container.node()).k);
 
     // Update the node circle and label positions.
     nodeSelection
       .select("circle")
-      .attr("r", showDetails ? expandedRadius : normalRadius)
-      .attr("clip-path", showDetails ? expandedRadius : normalRadius);
-    nodeSelection.select("text").attr("dy", showDetails ? 50 : 20);
+      .attr("r", showDetails ? expandedRadius : d.baseRadius)
+      .attr("clip-path", showDetails ? expandedRadius : d.baseRadius);
+    nodeSelection.select("text").attr("dy", showDetails ? 50 : d.baseRadius + 14);
 
     nodeSelection
       .select("image")
-      .attr("x", showDetails ? -expandedRadius : -normalRadius)
-      .attr("y", showDetails ? -expandedRadius : -normalRadius)
-      .attr("width", showDetails ? 2 * expandedRadius : 2 * normalRadius)
-      .attr("height", showDetails ? 2 * expandedRadius : 2 * normalRadius)
+      .attr("x", showDetails ? -expandedRadius : -d.baseRadius)
+      .attr("y", showDetails ? -expandedRadius : -d.baseRadius)
+      .attr("width", showDetails ? 2 * expandedRadius : 2 * d.baseRadius)
+      .attr("height", showDetails ? 2 * expandedRadius : 2 * d.baseRadius)
       .attr(
         "clip-path",
-        `circle(${showDetails ? expandedRadius - 2 : normalRadius}`,
+        `circle(${showDetails ? expandedRadius - 2 : d.baseRadius}`,
       );
 
     if (showDetails) {
@@ -333,21 +405,6 @@ function renderGraph(graph) {
         .attr("ry", 10)
         .attr("filter", "url(#dropShadow)");
       detailsRect.attr("data-height", detailsHeight);
-
-      // Create a drop shadow definition if needed.
-      const defs = svg.select("defs");
-      if (defs.empty()) {
-        svg.append("defs").append("filter").attr("id", "dropShadow").html(`
-            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-            <feOffset dx="0" dy="2" result="offsetblur"/>
-            <feFlood flood-color="#00000033"/>
-            <feComposite in2="offsetblur" operator="in"/>
-            <feMerge>
-              <feMergeNode/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          `);
-      }
 
       // Create a group for details content.
       const content = details.append("g").attr("transform", "translate(0, 10)");
@@ -418,10 +475,22 @@ function renderGraph(graph) {
       "transform",
       (d) => `translate(${d.x}, ${yScale(d.dateObj)})`,
     );
-    linkElements
-      .attr("x1", (d) => d.source.x)
-      .attr("y1", (d) => yScale(d.source.dateObj))
-      .attr("x2", (d) => d.target.x)
-      .attr("y2", (d) => yScale(d.target.dateObj));
+
+    linkElements.attr("d", (d) => {
+      const x1 = d.source.x, y1 = yScale(d.source.dateObj);
+      const x2 = d.target.x, y2 = yScale(d.target.dateObj);
+      // Control points curve horizontally toward the midpoint.
+      const midY = (y1 + y2) / 2;
+      const cx1 = x1, cy1 = midY;
+      const cx2 = x2, cy2 = midY;
+      return `M${x1},${y1} C${cx1},${cy1} ${cx2},${cy2} ${x2},${y2}`;
+    });
+
+    // Keep gradient coordinates aligned with their link endpoints.
+    graph.links.forEach((d) => {
+      const grad = svgDefs.select(`#${d._gradId}`);
+      grad.attr("x1", d.source.x).attr("y1", yScale(d.source.dateObj))
+          .attr("x2", d.target.x).attr("y2", yScale(d.target.dateObj));
+    });
   }
 }
