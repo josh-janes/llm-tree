@@ -184,11 +184,11 @@ function renderGraph(graph) {
     .force("x", d3.forceX(d => d.initialX).strength(0.4))
     .force("y", d3.forceY(d => yScale(d.dateObj)).strength(1))
     .force("link",
-      d3.forceLink(graph.links).id(d => d.id).distance(320).strength(0.3))
-    .force("charge", d3.forceManyBody().strength(-600).distanceMax(1200))
+      d3.forceLink(graph.links).id(d => d.id).distance(400).strength(0.25))
+    .force("charge", d3.forceManyBody().strength(-900).distanceMax(1600))
     .force("collision", d3.forceCollide(d => {
       const r = d.expanded ? expandedRadius : d.baseRadius;
-      return Math.max(r * 3, d.textWidth + 50);
+      return Math.max(r * 4, d.textWidth + 70);
     }))
     .velocityDecay(0.75)
     .on("tick", ticked);
