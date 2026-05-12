@@ -191,7 +191,8 @@ function renderGraph(graph) {
       return Math.max(r * 4, d.textWidth + 70);
     }))
     .velocityDecay(0.75)
-    .on("tick", ticked);
+    .on("tick", ticked)
+    .on("end", updateGradients);
 
   // ── 8. Link child-offset preprocessing ───────────────────────────────────
   graph.links.forEach(link => {
@@ -220,9 +221,10 @@ function renderGraph(graph) {
     <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
   `);
 
-  // Per-link linear gradient.
-  // gradientUnits="objectBoundingBox" means the gradient automatically follows
-  // the path bounding box — no per-tick coordinate updates needed.
+  // Per-link linear gradient — userSpaceOnUse so coordinates never degenerate
+  // (objectBoundingBox fails for horizontal paths with zero-height bounding boxes).
+  // Coordinates are set from initial node positions and updated exactly once
+  // when the simulation finishes, so there is no per-tick overhead.
   graph.links.forEach((l, i) => {
     const srcId   = l.source.id !== undefined ? l.source.id : l.source;
     const tgtId   = l.target.id !== undefined ? l.target.id : l.target;
@@ -237,9 +239,11 @@ function renderGraph(graph) {
 
     const grad = svgDefs.append("linearGradient")
       .attr("id", gradId)
-      .attr("gradientUnits", "objectBoundingBox")
-      .attr("x1", "0%").attr("y1", "0%")
-      .attr("x2", "0%").attr("y2", "100%");
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", srcNode ? srcNode.x || 0 : 0)
+      .attr("y1", srcNode ? yScale(srcNode.dateObj) : 0)
+      .attr("x2", tgtNode ? tgtNode.x || 0 : 0)
+      .attr("y2", tgtNode ? yScale(tgtNode.dateObj) : 0);
     grad.append("stop").attr("offset", "0%")
       .attr("stop-color", srcNode ? srcNode.orgColor : defaultOrgColor)
       .attr("stop-opacity", l._opacity);
@@ -389,12 +393,19 @@ function renderGraph(graph) {
       const x1 = d.source.x, y1 = yScale(d.source.dateObj);
       const x2 = d.target.x, y2 = yScale(d.target.dateObj);
       const dy  = y2 - y1;
-      // Tighter S-curve: control points pulled 35% toward the midpoint
-      // from each endpoint, keeping x fixed → clean parallel fan-out.
       const cy1 = y1 + dy * 0.35;
       const cy2 = y2 - dy * 0.35;
       return `M${x1},${y1} C${x1},${cy1} ${x2},${cy2} ${x2},${y2}`;
     });
+  }
 
+  // Called once when the simulation cools — snaps gradient endpoints to final
+  // node positions without any per-tick overhead.
+  function updateGradients() {
+    graph.links.forEach(l => {
+      svgDefs.select(`#${l._gradId}`)
+        .attr("x1", l.source.x).attr("y1", yScale(l.source.dateObj))
+        .attr("x2", l.target.x).attr("y2", yScale(l.target.dateObj));
+    });
   }
 }
