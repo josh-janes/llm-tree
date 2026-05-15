@@ -4,17 +4,19 @@
 
 An interactive visualization of Large Language Model (LLM) development timelines using Directed Acyclic Graph (DAG) representation.
 
-![Screenshot](screenshot.png)
+![Screenshot](llm-tree-banner.gif)
 
 ## Implementation Details
 
 ### Core Technologies
+
 - **D3.js** (v7) - Graph rendering and force simulation
 - **SVG** - Vector graphics rendering
 - **Modern JavaScript** (ES6+) - Interactive functionality
 - **CSS3** - Animations and styling
 
 ### Architecture
+
 ```plaintext
 project-root/
 ├── public/
@@ -24,9 +26,10 @@ project-root/
 │   ├── script.js             # Main application logic
 │   └── index.html            # Main entry point
 ```
+
 ### Key Components
 
-##   Data Structure
+## Data Structure
 
         Nodes with temporal, organizational, and technical metadata
 
@@ -34,7 +37,7 @@ project-root/
 
         Auto-calculated text widths for collision prevention
 
-##  Visualization Engine
+## Visualization Engine
 
         Force simulation with multiple constraints:
 
@@ -46,7 +49,7 @@ project-root/
 
         Dynamic scaling during zoom operations
 
-##  UI Components
+## UI Components
 
         Animated gradient background
 
@@ -57,6 +60,7 @@ project-root/
         Persistent informational overlays
 
 ### Installation & Usage
+
 ## Prerequisites
 
     Modern web browser (Chrome/Firefox/Safari)
@@ -77,6 +81,7 @@ project-root/
 ### Data API
 
 The graph expects a JSON endpoint at /api/graph with following structure:
+
 ```json
 {
   "nodes": [
@@ -92,12 +97,9 @@ The graph expects a JSON endpoint at /api/graph with following structure:
       }
     }
   ],
-  "links": [
-    {"source": "parent-id", "target": "child-id"}
-  ]
+  "links": [{ "source": "parent-id", "target": "child-id" }]
 }
 ```
-
 
 ### Contributing
 
